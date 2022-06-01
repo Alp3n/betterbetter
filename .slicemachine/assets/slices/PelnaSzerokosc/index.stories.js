@@ -1,0 +1,12 @@
+import MyComponent from '../../../../slices/PelnaSzerokosc';
+
+export default {
+  title: 'slices/PelnaSzerokosc'
+}
+
+
+export const _Default = () => <MyComponent slice={{"variation":"default","name":"Default","slice_type":"pelna_szerokosc","items":[],"primary":{"description":[{"type":"paragraph","text":"Veniam ea do sit cupidatat aliquip incididunt et velit amet aliqua do incididunt voluptate do. Sit id quis voluptate deserunt nisi et.","spans":[]}],"image":{"dimensions":{"width":900,"height":500},"alt":"Placeholder image","copyright":null,"url":"https://images.unsplash.com/photo-1586952518485-11b180e92764?w=900&h=500&fit=crop"}},"id":"_Default"}} />
+_Default.storyName = 'Default'
+
+export const _Home = () => <MyComponent slice={{"variation":"home","name":"Home","slice_type":"pelna_szerokosc","items":[{"uid":2585,"room":[{"type":"heading1","text":"Harness collaborative partnerships","spans":[]}],"number":[{"type":"paragraph","text":"Commodo occaecat mollit ex fugiat ullamco est eu.","spans":[]}]},{"uid":6500,"room":[{"type":"heading1","text":"Incubate bleeding-edge synergies","spans":[]}],"number":[{"type":"paragraph","text":"Ut mollit cillum incididunt deserunt.","spans":[]}]},{"uid":796,"room":[{"type":"heading1","text":"Exploit clicks-and-mortar infomediaries","spans":[]}],"number":[{"type":"paragraph","text":"Ad aliqua consectetur velit non occaecat proident anim sint in anim. Deserunt velit cupidatat reprehenderit consectetur.","spans":[]}]},{"uid":4979,"room":[{"type":"heading1","text":"Recontextualize frictionless infomediaries","spans":[]}],"number":[{"type":"paragraph","text":"Do duis tempor dolor veniam culpa deserunt ex. Consectetur enim aute laboris tempor ex sit est consectetur. Adipisicing magna ipsum duis officia adipisicing pariatur in qui nisi nisi in proident voluptate officia consectetur.","spans":[]}]}],"primary":{"description":[{"type":"paragraph","text":"Veniam elit non commodo excepteur voluptate occaecat esse. Amet excepteur qui adipisicing veniam et laboris sit nulla duis eu dolore labore magna.","spans":[]}],"image":{"dimensions":{"width":900,"height":500},"alt":"Placeholder image","copyright":null,"url":"https://images.unsplash.com/photo-1606248897732-2c5ffe759c04?w=900&h=500&fit=crop"}},"id":"_Home"}} />
+_Home.storyName = 'Home'

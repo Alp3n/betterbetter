@@ -1,0 +1,172 @@
+{
+  "id": "9eaafc86-9555-4a59-b3bb-217c392029f2",
+  "uid": "sed-suscipit-porro",
+  "type": "menu",
+  "data": {
+    "logo": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e?w=900&h=500&fit=crop"
+    },
+    "homeLink": {
+      "link_type": "Web",
+      "url": "https://prismic.io"
+    },
+    "menuLinks": [
+      {
+        "label": [
+          {
+            "type": "paragraph",
+            "text": "Incididunt occaecat labore nisi Lorem enim ut occaecat dolore veniam adipisicing officia consequat dolore. Est aute amet sit ipsum excepteur exercitation.",
+            "spans": []
+          }
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        }
+      },
+      {
+        "label": [
+          {
+            "type": "paragraph",
+            "text": "Dolore eu ullamco mollit labore cillum culpa velit amet aute ea voluptate dolore excepteur. Laborum qui ex sunt nostrud occaecat minim sint ex. Aliquip ea irure sit qui exercitation reprehenderit eiusmod Lorem nisi et ullamco ea voluptate excepteur veniam.",
+            "spans": []
+          }
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        }
+      },
+      {
+        "label": [
+          {
+            "type": "paragraph",
+            "text": "Id aliqua voluptate quis. Nulla dolore duis consectetur consequat nulla officia laborum ea minim nisi do esse. Tempor duis occaecat tempor eiusmod aute minim occaecat.",
+            "spans": []
+          }
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      }
+    ],
+    "socialLinks": [
+      {
+        "label": "drive dynamic applications",
+        "link": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        },
+        "icon": {
+          "dimensions": {
+            "width": 27,
+            "height": 27
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=27&h=27&fit=crop"
+        }
+      },
+      {
+        "label": "benchmark sexy blockchains",
+        "link": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        },
+        "icon": {
+          "dimensions": {
+            "width": 27,
+            "height": 27
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869?w=27&h=27&fit=crop"
+        }
+      },
+      {
+        "label": "streamline strategic ROI",
+        "link": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        },
+        "icon": {
+          "dimensions": {
+            "width": 27,
+            "height": 27
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=27&h=27&fit=crop"
+        }
+      },
+      {
+        "label": "morph magnetic interfaces",
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        },
+        "icon": {
+          "dimensions": {
+            "width": 27,
+            "height": 27
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?w=27&h=27&fit=crop"
+        }
+      },
+      {
+        "label": "implement real-time deliverables",
+        "link": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        },
+        "icon": {
+          "dimensions": {
+            "width": 27,
+            "height": 27
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f?w=27&h=27&fit=crop"
+        }
+      }
+    ],
+    "footer": [
+      {
+        "item": [
+          {
+            "type": "paragraph",
+            "text": "Nostrud labore pariatur cupidatat incididunt aute laborum consequat. Voluptate labore ea consectetur culpa sunt qui enim.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "item": [
+          {
+            "type": "paragraph",
+            "text": "Cupidatat ullamco velit anim Lorem eiusmod adipisicing ea.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "item": [
+          {
+            "type": "paragraph",
+            "text": "Nisi nostrud incididunt aute voluptate nulla exercitation cillum non sit consequat reprehenderit. Laborum sunt do elit proident anim eiusmod labore velit.",
+            "spans": []
+          }
+        ]
+      }
+    ]
+  }
+}

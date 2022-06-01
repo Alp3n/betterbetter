@@ -1,0 +1,90 @@
+{
+  "id": "pelna_szerokosc",
+  "type": "SharedSlice",
+  "name": "PelnaSzerokosc",
+  "description": "PelnaSzerokosc",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "PelnaSzerokosc",
+      "primary": {
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Opis",
+            "placeholder": "Wstaw opis...",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Zdjecie",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    },
+    {
+      "id": "home",
+      "name": "Home",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "PelnaSzerokosc",
+      "primary": {
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Opis",
+            "placeholder": "Wstaw opis...",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Zdjecie",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {
+        "uid": {
+          "type": "Number",
+          "config": {
+            "label": "Uid",
+            "placeholder": "Wstaw unikalny identyfkator"
+          }
+        },
+        "room": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Pomieszczenie",
+            "placeholder": "Wstaw nazwę pomieszczenia...",
+            "allowTargetBlank": true,
+            "single": "heading1,heading2,heading3,heading4,heading5,heading6"
+          }
+        },
+        "number": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Numer",
+            "placeholder": "Wstaw numer pomieszczenia...",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

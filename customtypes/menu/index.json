@@ -1,0 +1,102 @@
+{
+  "id": "menu",
+  "label": "menu",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "menuLinks": {
+        "type": "Group",
+        "config": {
+          "label": "Linki menu",
+          "fields": {
+            "label": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Etykieta linku",
+                "placeholder": "Wpisz etykietę linku...",
+                "allowTargetBlank": true,
+                "single": "paragraph"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "Wybierz link do dokumentu...",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "homeLink": {
+        "type": "Link",
+        "config": {
+          "label": "Home Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "socialLinks": {
+        "type": "Group",
+        "config": {
+          "label": "Social Links",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": "Etykieta social media..."
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "Dodaj link do socialmedia",
+                "select": null
+              }
+            },
+            "icon": {
+              "type": "Image",
+              "config": {
+                "label": "Icon",
+                "constraint": {
+                  "width": 27,
+                  "height": 27
+                },
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
+      "footer": {
+        "type": "Group",
+        "config": {
+          "label": "Stopka",
+          "fields": {
+            "item": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Item",
+                "placeholder": "Przedmiot stopki... np. email, tele",
+                "allowTargetBlank": true,
+                "single": "paragraph"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
