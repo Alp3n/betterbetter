@@ -1,66 +1,83 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { PrismicRichText } from '@prismicio/react';
 import * as prismicH from '@prismicio/helpers';
 import styled from '@emotion/styled';
 import Bounded from '../../components/bounded';
-
 import Button from '../../components/button';
 import Image from '../../components/image';
+import Modal from '../../components/modal';
 
-const PodgladStrony = ({ slice }) => (
-  <Bounded as='section' margin>
-    <Grid variation={slice.primary.number}>
-      <ImagesSide variation={slice.primary.number}>
-        <SmallImage>
-          <Image
-            src={prismicH.asImageSrc(slice.primary.imageSmall, {
-              w: undefined,
-              h: undefined,
-            })}
-            alt=''
-            layout='fill'
-            quality={85}
-          />
-        </SmallImage>
-        <BigImage>
-          <Image
-            src={prismicH.asImageSrc(slice.primary.imageBig, {
-              w: undefined,
-              h: undefined,
-            })}
-            alt=''
-            layout='fill'
-            quality={85}
-          />
-        </BigImage>
-        <Number variation={slice.primary.number}>{slice.primary.number}</Number>
-      </ImagesSide>
-      <DescriptionSide variation={slice.primary.number}>
-        <PrismicRichText field={slice.primary.title} />
-        <StyledDescirption variation={slice.primary.number}>
-          <PrismicRichText field={slice.primary.description} />
-        </StyledDescirption>
-        <Button
-          primary='true'
-          label={slice.primary.buttonLabel}
-          link={slice.primary.buttonLink}
-        />
-        {slice.variation === 'withBrands' ? (
-          <BrandsList>
-            {prismicH.isFilled.group(slice.items)
-              ? slice.items.map((item) => (
-                  <BrandItem key={item.uid}>
-                    <PrismicRichText field={item.brandName} />
-                    <BrandArrow>&#62;</BrandArrow>
-                  </BrandItem>
-                ))
-              : null}
-          </BrandsList>
-        ) : null}
-      </DescriptionSide>
-    </Grid>
-  </Bounded>
-);
+const PodgladStrony = ({ slice }) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
+
+  return (
+    <>
+      <Bounded as='section' margin>
+        <Grid variation={slice.primary.number}>
+          <ImagesSide variation={slice.primary.number}>
+            <SmallImage>
+              <Image
+                src={prismicH.asImageSrc(slice.primary.imageSmall, {
+                  w: undefined,
+                  h: undefined,
+                })}
+                alt=''
+                layout='fill'
+                quality={85}
+              />
+            </SmallImage>
+            <BigImage>
+              <Image
+                src={prismicH.asImageSrc(slice.primary.imageBig, {
+                  w: undefined,
+                  h: undefined,
+                })}
+                alt=''
+                layout='fill'
+                quality={85}
+              />
+            </BigImage>
+            <Number variation={slice.primary.number}>
+              {slice.primary.number}
+            </Number>
+          </ImagesSide>
+          <DescriptionSide variation={slice.primary.number}>
+            <PrismicRichText field={slice.primary.title} />
+            <StyledDescirption variation={slice.primary.number}>
+              <PrismicRichText field={slice.primary.description} />
+            </StyledDescirption>
+            <Button
+              primary='true'
+              label={slice.primary.buttonLabel}
+              link={slice.primary.buttonLink}
+            />
+            {slice.variation === 'withBrands' ? (
+              <BrandsList>
+                {prismicH.isFilled.group(slice.items)
+                  ? slice.items.map((item) => (
+                      <React.Fragment key={item.uid}>
+                        <Modal
+                          isOpen={modalIsOpen}
+                          onRequestClose={closeModal}
+                          item={item}
+                        />
+                        <BrandItem onClick={openModal}>
+                          <PrismicRichText field={item.brandName} />
+                          <BrandArrow>&#62;</BrandArrow>
+                        </BrandItem>
+                      </React.Fragment>
+                    ))
+                  : null}
+              </BrandsList>
+            ) : null}
+          </DescriptionSide>
+        </Grid>
+      </Bounded>
+    </>
+  );
+};
 
 export default PodgladStrony;
 

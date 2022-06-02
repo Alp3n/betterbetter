@@ -156,45 +156,81 @@
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "brandImage": {
+        "image": {
           "type": "Image",
           "config": {
-            "label": "Brand Image",
+            "label": "Zdjęcie",
             "constraint": {},
             "thumbnails": []
           }
         },
-        "brandUrl": {
+        "url": {
           "type": "Link",
           "config": {
-            "label": "Brand Url",
+            "label": "URL strony",
             "placeholder": "",
             "select": null
           }
         },
-        "brandDescription": {
+        "description": {
           "type": "StructuredText",
           "config": {
-            "label": "Brand Description",
-            "placeholder": "",
+            "label": "Opis brandu",
+            "placeholder": "Wstaw opis brandu...",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "brandContactOnePerson": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Konsultant pierwszy",
+            "placeholder": "Imię i nazwisko konsultanta/nazwa",
             "allowTargetBlank": true,
             "single": "paragraph"
           }
         },
-        "brandContactOne": {
+        "brandContactOnePhone": {
           "type": "StructuredText",
           "config": {
-            "label": "Brand Contact One",
-            "placeholder": "",
+            "label": "Numer pierwszego konsultanta",
+            "placeholder": "Numer pierwszego konsultanta",
             "allowTargetBlank": true,
             "single": "paragraph"
           }
         },
-        "brandContactTwo": {
+        "brandContactOneEmail": {
           "type": "StructuredText",
           "config": {
-            "label": "Brand Contact Two",
-            "placeholder": "",
+            "label": "Email konsultanta pierwszego",
+            "placeholder": "Email konsultanta pierwszego",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        },
+        "brandContactTwoPerson": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Konsultant drugi",
+            "placeholder": "Imię i nazwisko konsultanta / nazwa",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        },
+        "brandContactTwoPhone": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Telefon konsultanta drugiego",
+            "placeholder": "Telefon konsultanta drugiego",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        },
+        "brandContactTwoEmail": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Email konsultanta drugiego",
+            "placeholder": "Email konsultanta drugiego",
             "allowTargetBlank": true,
             "single": "paragraph"
           }

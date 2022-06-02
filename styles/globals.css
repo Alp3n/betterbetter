@@ -48,6 +48,11 @@ h2 {
   color: white;
 }
 
+.ReactModal__Body--open,
+.ReactModal__Html--open {
+  overflow: hidden;
+}
+
 @media only screen and (min-width: 640px) {
   h1 {
     font-size: 45px;
