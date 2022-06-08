@@ -1,6 +1,153 @@
 {
-  "id": "533659f1-735b-4503-bd9b-6512debedbec",
-  "uid": "exercitationem-odit-a",
+  "id": "0d0a84cc-b39d-43c6-b77f-2ce369f4d491",
+  "uid": "praesentium-quae-id",
   "type": "brand",
-  "data": {}
+  "data": {
+    "name": [
+      {
+        "type": "paragraph",
+        "text": "Qui et consectetur dolor. Lorem culpa nisi officia voluptate culpa dolor dolor deserunt culpa.",
+        "spans": []
+      }
+    ],
+    "description": [
+      {
+        "type": "paragraph",
+        "text": "Amet labore mollit ut ipsum. Anim excepteur ea ea nisi cillum adipisicing enim minim magna labore fugiat.",
+        "spans": []
+      }
+    ],
+    "image": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=900&h=500&fit=crop"
+    },
+    "url": {
+      "link_type": "Web",
+      "url": "http://google.com"
+    },
+    "contacts": [
+      {
+        "name": [
+          {
+            "type": "paragraph",
+            "text": "Quis ex non fugiat in ullamco nostrud sit laborum exercitation. Aute consequat eiusmod esse ullamco irure. Culpa deserunt id laborum.",
+            "spans": []
+          }
+        ],
+        "phone": [
+          {
+            "type": "paragraph",
+            "text": "Voluptate sit ut voluptate irure tempor irure ut mollit incididunt ut magna minim. Sit duis fugiat sit ad laborum consequat consequat minim anim culpa et nisi culpa sint. Dolore excepteur consectetur aute eu.",
+            "spans": []
+          }
+        ],
+        "email": [
+          {
+            "type": "paragraph",
+            "text": "Mollit esse cupidatat non sit excepteur. Elit anim nisi ut officia.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "name": [
+          {
+            "type": "paragraph",
+            "text": "Tempor officia quis elit veniam aliquip. Proident nostrud laborum deserunt eu nostrud.",
+            "spans": []
+          }
+        ],
+        "phone": [
+          {
+            "type": "paragraph",
+            "text": "Deserunt est aute ipsum nostrud. Et pariatur mollit minim et laboris.",
+            "spans": []
+          }
+        ],
+        "email": [
+          {
+            "type": "paragraph",
+            "text": "Et consequat id qui anim sit duis tempor consectetur esse id quis ipsum duis. Culpa duis dolore quis labore.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "name": [
+          {
+            "type": "paragraph",
+            "text": "Nulla magna enim elit sunt do amet ex consectetur consectetur mollit officia deserunt.",
+            "spans": []
+          }
+        ],
+        "phone": [
+          {
+            "type": "paragraph",
+            "text": "Deserunt sint adipisicing ea. Officia minim ex sit enim dolor irure adipisicing aliqua magna eiusmod excepteur.",
+            "spans": []
+          }
+        ],
+        "email": [
+          {
+            "type": "paragraph",
+            "text": "Enim anim ut nisi. Laborum sit reprehenderit voluptate cupidatat laborum.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "name": [
+          {
+            "type": "paragraph",
+            "text": "Culpa veniam irure officia ut dolore amet proident aute ea ex nulla Lorem.",
+            "spans": []
+          }
+        ],
+        "phone": [
+          {
+            "type": "paragraph",
+            "text": "Proident deserunt laboris eu nostrud. Dolor eiusmod do esse laboris fugiat dolor commodo.",
+            "spans": []
+          }
+        ],
+        "email": [
+          {
+            "type": "paragraph",
+            "text": "Irure sunt aliqua reprehenderit laborum aliquip ipsum in do non excepteur. Exercitation ullamco incididunt aute ex deserunt voluptate et.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "name": [
+          {
+            "type": "paragraph",
+            "text": "Consequat dolor pariatur ullamco veniam sunt elit velit aliqua consectetur elit id. Eu proident reprehenderit elit proident ipsum. Velit dolor ut non ullamco excepteur ea culpa sunt est.",
+            "spans": []
+          }
+        ],
+        "phone": [
+          {
+            "type": "paragraph",
+            "text": "Fugiat velit ad do ex elit consequat dolore Lorem ullamco dolor ullamco cillum ipsum duis anim. Nisi ipsum elit deserunt proident magna nulla est Lorem nostrud.",
+            "spans": []
+          }
+        ],
+        "email": [
+          {
+            "type": "paragraph",
+            "text": "Tempor eiusmod do enim est Lorem dolor et esse pariatur labore cupidatat aliquip. Excepteur in sint id do sunt mollit labore nostrud ut esse sint.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "metaTitle": "cultivate intuitive relationships",
+    "metaDescription": "e-enable leading-edge markets"
+  }
 }

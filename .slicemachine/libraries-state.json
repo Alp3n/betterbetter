@@ -1,6 +1,297 @@
 {
   "slices": {
     "components": {
+      "brand": {
+        "library": "slices",
+        "id": "brand",
+        "name": "Brand",
+        "description": "Brand",
+        "model": {
+          "id": "brand",
+          "type": "SharedSlice",
+          "name": "Brand",
+          "description": "Brand",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Brand",
+              "primary": {
+                "name": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Nazwa brandu",
+                    "placeholder": "Nazwa brandu...",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6"
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Opis",
+                    "placeholder": "Opis brandu...",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph"
+                  }
+                },
+                "url": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Url",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "items": {
+                "contactName": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Contact Name",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "contactPhone": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Contact Phone",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "contactEmail": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Contact Email",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "brand",
+            "items": [
+              {
+                "contactName": [
+                  {
+                    "type": "paragraph",
+                    "text": "In voluptate nulla tempor pariatur minim elit elit pariatur laborum est ut Lorem officia. Non reprehenderit excepteur non enim eu. Labore sint eiusmod proident officia do pariatur velit proident elit.",
+                    "spans": []
+                  }
+                ],
+                "contactPhone": [
+                  {
+                    "type": "paragraph",
+                    "text": "Id cillum laboris dolore. Ea qui exercitation voluptate proident dolore reprehenderit dolore cillum fugiat dolore amet amet do sunt. Mollit non est adipisicing officia elit veniam culpa quis ullamco exercitation et.",
+                    "spans": []
+                  }
+                ],
+                "contactEmail": [
+                  {
+                    "type": "paragraph",
+                    "text": "Aute esse consectetur in veniam cupidatat quis Lorem aliquip.",
+                    "spans": []
+                  }
+                ]
+              },
+              {
+                "contactName": [
+                  {
+                    "type": "paragraph",
+                    "text": "Commodo pariatur et do qui sunt.",
+                    "spans": []
+                  }
+                ],
+                "contactPhone": [
+                  {
+                    "type": "paragraph",
+                    "text": "Ipsum proident sunt duis. Pariatur do irure commodo nisi fugiat sint anim duis in sunt nulla reprehenderit labore qui.",
+                    "spans": []
+                  }
+                ],
+                "contactEmail": [
+                  {
+                    "type": "paragraph",
+                    "text": "Duis velit ea et quis do consequat aliqua cupidatat proident excepteur ex exercitation consectetur est. Aliquip ex pariatur culpa sint pariatur in enim do eu.",
+                    "spans": []
+                  }
+                ]
+              },
+              {
+                "contactName": [
+                  {
+                    "type": "paragraph",
+                    "text": "Excepteur reprehenderit nulla fugiat.",
+                    "spans": []
+                  }
+                ],
+                "contactPhone": [
+                  {
+                    "type": "paragraph",
+                    "text": "Aliquip exercitation laboris labore est irure pariatur qui. Occaecat labore nulla in in voluptate anim. Commodo mollit incididunt reprehenderit deserunt.",
+                    "spans": []
+                  }
+                ],
+                "contactEmail": [
+                  {
+                    "type": "paragraph",
+                    "text": "Do exercitation sunt tempor cupidatat. Sint nulla duis deserunt. Adipisicing qui quis nulla aute ut Lorem amet eu dolore pariatur sit cupidatat eiusmod eiusmod.",
+                    "spans": []
+                  }
+                ]
+              }
+            ],
+            "primary": {
+              "name": [
+                {
+                  "type": "paragraph",
+                  "text": "Veniam nostrud ea voluptate dolor sint est tempor ea. Ad duis do amet est consequat nostrud. Ad excepteur nostrud pariatur ut officia eiusmod exercitation Lorem nulla do commodo incididunt duis.",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Magna qui velit nulla do dolor laboris laboris enim. Aute aliquip Lorem mollit amet.",
+                  "spans": []
+                }
+              ],
+              "url": {
+                "link_type": "Web",
+                "url": "https://slicemachine.dev"
+              },
+              "image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": "Placeholder image",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117?w=900&h=500&fit=crop"
+              }
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "galeria_brandow": {
+        "library": "slices",
+        "id": "galeria_brandow",
+        "name": "GaleriaBrandow",
+        "description": "GaleriaBrandow",
+        "model": {
+          "id": "galeria_brandow",
+          "type": "SharedSlice",
+          "name": "GaleriaBrandow",
+          "description": "GaleriaBrandow",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "GaleriaBrandow",
+              "primary": {},
+              "items": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Logo brandu",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "galeria_brandow",
+            "items": [
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117?w=900&h=500&fit=crop"
+                }
+              },
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": "Placeholder image",
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=900&h=500&fit=crop"
+                }
+              }
+            ],
+            "primary": {}
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
       "galeria_zdjec": {
         "library": "slices",
         "id": "galeria_zdjec",
@@ -494,103 +785,7 @@
                   }
                 }
               },
-              "items": {
-                "uid": {
-                  "type": "Text",
-                  "config": {
-                    "label": "Uid",
-                    "placeholder": ""
-                  }
-                },
-                "brandName": {
-                  "type": "StructuredText",
-                  "config": {
-                    "label": "Brand Name",
-                    "placeholder": "",
-                    "allowTargetBlank": true,
-                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-                  }
-                },
-                "image": {
-                  "type": "Image",
-                  "config": {
-                    "label": "Zdjęcie",
-                    "constraint": {},
-                    "thumbnails": []
-                  }
-                },
-                "url": {
-                  "type": "Link",
-                  "config": {
-                    "label": "URL strony",
-                    "placeholder": "",
-                    "select": null
-                  }
-                },
-                "description": {
-                  "type": "StructuredText",
-                  "config": {
-                    "label": "Opis brandu",
-                    "placeholder": "Wstaw opis brandu...",
-                    "allowTargetBlank": true,
-                    "multi": "paragraph"
-                  }
-                },
-                "brandContactOnePerson": {
-                  "type": "StructuredText",
-                  "config": {
-                    "label": "Konsultant pierwszy",
-                    "placeholder": "Imię i nazwisko konsultanta/nazwa",
-                    "allowTargetBlank": true,
-                    "single": "paragraph"
-                  }
-                },
-                "brandContactOnePhone": {
-                  "type": "StructuredText",
-                  "config": {
-                    "label": "Numer pierwszego konsultanta",
-                    "placeholder": "Numer pierwszego konsultanta",
-                    "allowTargetBlank": true,
-                    "single": "paragraph"
-                  }
-                },
-                "brandContactOneEmail": {
-                  "type": "StructuredText",
-                  "config": {
-                    "label": "Email konsultanta pierwszego",
-                    "placeholder": "Email konsultanta pierwszego",
-                    "allowTargetBlank": true,
-                    "single": "paragraph"
-                  }
-                },
-                "brandContactTwoPerson": {
-                  "type": "StructuredText",
-                  "config": {
-                    "label": "Konsultant drugi",
-                    "placeholder": "Imię i nazwisko konsultanta / nazwa",
-                    "allowTargetBlank": true,
-                    "single": "paragraph"
-                  }
-                },
-                "brandContactTwoPhone": {
-                  "type": "StructuredText",
-                  "config": {
-                    "label": "Telefon konsultanta drugiego",
-                    "placeholder": "Telefon konsultanta drugiego",
-                    "allowTargetBlank": true,
-                    "single": "paragraph"
-                  }
-                },
-                "brandContactTwoEmail": {
-                  "type": "StructuredText",
-                  "config": {
-                    "label": "Email konsultanta drugiego",
-                    "placeholder": "Email konsultanta drugiego",
-                    "allowTargetBlank": true,
-                    "single": "paragraph"
-                  }
-                }
-              },
+              "items": {},
               "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
             }
           ]
@@ -605,506 +800,21 @@
               "title": [
                 {
                   "type": "heading1",
-                  "text": "Transform 24/365 web services",
+                  "text": "Brand clicks-and-mortar functionalities",
                   "spans": []
                 }
               ],
               "description": [
                 {
                   "type": "paragraph",
-                  "text": "Consequat veniam aliqua sit officia officia ipsum pariatur commodo et incididunt. Magna laborum ipsum proident ipsum minim in quis exercitation. Id Lorem et fugiat nulla magna laborum magna.",
+                  "text": "Aliqua laboris fugiat eu sint occaecat ad labore mollit occaecat minim enim proident excepteur. Amet consectetur ad tempor cupidatat ullamco aliquip. Veniam minim deserunt nostrud qui magna velit ipsum.",
                   "spans": []
                 }
               ],
               "buttonLabel": [
                 {
                   "type": "paragraph",
-                  "text": "Cillum sit aliquip enim ex esse consequat consequat velit culpa deserunt do.",
-                  "spans": []
-                }
-              ],
-              "buttonLink": {
-                "link_type": "Web",
-                "url": "http://twitter.com"
-              },
-              "imageBig": {
-                "dimensions": {
-                  "width": 900,
-                  "height": 500
-                },
-                "alt": "Placeholder image",
-                "copyright": null,
-                "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055?w=900&h=500&fit=crop"
-              },
-              "imageSmall": {
-                "dimensions": {
-                  "width": 900,
-                  "height": 500
-                },
-                "alt": "Placeholder image",
-                "copyright": null,
-                "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea?w=900&h=500&fit=crop"
-              },
-              "number": 9832
-            }
-          },
-          "withBrands": {
-            "variation": "withBrands",
-            "name": "Z brandami",
-            "slice_type": "podglad_strony",
-            "items": [
-              {
-                "uid": "evolve enterprise applications",
-                "brandName": [
-                  {
-                    "type": "paragraph",
-                    "text": "Nisi occaecat consequat fugiat fugiat non. Aliquip enim qui culpa nulla ea velit officia veniam officia labore voluptate sunt.",
-                    "spans": []
-                  }
-                ],
-                "image": {
-                  "dimensions": {
-                    "width": 900,
-                    "height": 500
-                  },
-                  "alt": "Placeholder image",
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a?w=900&h=500&fit=crop"
-                },
-                "url": {
-                  "link_type": "Web",
-                  "url": "http://twitter.com"
-                },
-                "description": [
-                  {
-                    "type": "paragraph",
-                    "text": "Exercitation in nisi id ea reprehenderit. Exercitation eiusmod tempor sint aliqua do consequat cillum laborum aliquip.",
-                    "spans": []
-                  }
-                ],
-                "brandContactOnePerson": [
-                  {
-                    "type": "paragraph",
-                    "text": "Et nisi nostrud tempor ex mollit quis Lorem.",
-                    "spans": []
-                  }
-                ],
-                "brandContactOnePhone": [
-                  {
-                    "type": "paragraph",
-                    "text": "Amet officia nulla tempor nisi nulla officia qui eu amet aute occaecat sunt.",
-                    "spans": []
-                  }
-                ],
-                "brandContactOneEmail": [
-                  {
-                    "type": "paragraph",
-                    "text": "Elit dolore officia magna labore aliqua aliquip.",
-                    "spans": []
-                  }
-                ],
-                "brandContactTwoPerson": [
-                  {
-                    "type": "paragraph",
-                    "text": "Adipisicing minim est occaecat et enim ullamco dolor veniam voluptate nostrud velit laboris. Culpa amet pariatur excepteur laboris cupidatat anim est nulla.",
-                    "spans": []
-                  }
-                ],
-                "brandContactTwoPhone": [
-                  {
-                    "type": "paragraph",
-                    "text": "Ut fugiat consequat adipisicing ipsum deserunt reprehenderit minim consectetur enim fugiat est. Cupidatat sint occaecat ea mollit aute cupidatat fugiat anim dolor quis culpa irure. Occaecat non sint aliqua ut et minim eiusmod cillum.",
-                    "spans": []
-                  }
-                ],
-                "brandContactTwoEmail": [
-                  {
-                    "type": "paragraph",
-                    "text": "Reprehenderit commodo ipsum culpa Lorem aliqua dolor labore. Ad Lorem fugiat elit.",
-                    "spans": []
-                  }
-                ]
-              },
-              {
-                "uid": "whiteboard frictionless models",
-                "brandName": [
-                  {
-                    "type": "paragraph",
-                    "text": "Est esse proident incididunt nostrud enim non. Cupidatat id tempor ullamco anim id reprehenderit sint officia aliquip. Dolore culpa ad elit ad duis ullamco eu est excepteur.",
-                    "spans": []
-                  }
-                ],
-                "image": {
-                  "dimensions": {
-                    "width": 900,
-                    "height": 500
-                  },
-                  "alt": "Placeholder image",
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869?w=900&h=500&fit=crop"
-                },
-                "url": {
-                  "link_type": "Web",
-                  "url": "https://prismic.io"
-                },
-                "description": [
-                  {
-                    "type": "paragraph",
-                    "text": "Commodo mollit reprehenderit sint velit aliqua mollit nisi consequat.",
-                    "spans": []
-                  }
-                ],
-                "brandContactOnePerson": [
-                  {
-                    "type": "paragraph",
-                    "text": "Et occaecat sunt amet.",
-                    "spans": []
-                  }
-                ],
-                "brandContactOnePhone": [
-                  {
-                    "type": "paragraph",
-                    "text": "Reprehenderit aute ea minim ullamco et occaecat magna quis deserunt dolor id Lorem.",
-                    "spans": []
-                  }
-                ],
-                "brandContactOneEmail": [
-                  {
-                    "type": "paragraph",
-                    "text": "Pariatur sint id exercitation elit laborum id ipsum.",
-                    "spans": []
-                  }
-                ],
-                "brandContactTwoPerson": [
-                  {
-                    "type": "paragraph",
-                    "text": "Aute nostrud eu consectetur nulla magna esse culpa consectetur nisi laboris pariatur excepteur tempor aliqua mollit. Do sunt culpa cillum non veniam ullamco eiusmod culpa. Pariatur sunt ipsum sunt sit nisi qui est tempor reprehenderit.",
-                    "spans": []
-                  }
-                ],
-                "brandContactTwoPhone": [
-                  {
-                    "type": "paragraph",
-                    "text": "Nisi magna duis aliqua dolore eiusmod eu sint mollit laborum. Nisi commodo magna ullamco ullamco et veniam cillum. Eu fugiat ex cillum aliquip excepteur mollit adipisicing do minim do.",
-                    "spans": []
-                  }
-                ],
-                "brandContactTwoEmail": [
-                  {
-                    "type": "paragraph",
-                    "text": "Mollit dolore occaecat labore culpa ipsum ad dolore ea nulla velit amet elit. Pariatur cupidatat id esse commodo. Quis aliqua cupidatat sunt irure cupidatat officia.",
-                    "spans": []
-                  }
-                ]
-              },
-              {
-                "uid": "e-enable value-added applications",
-                "brandName": [
-                  {
-                    "type": "paragraph",
-                    "text": "Ad ullamco aute mollit esse ex. Officia proident esse consequat esse minim officia quis nulla fugiat sint ipsum mollit Lorem.",
-                    "spans": []
-                  }
-                ],
-                "image": {
-                  "dimensions": {
-                    "width": 900,
-                    "height": 500
-                  },
-                  "alt": "Placeholder image",
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482?w=900&h=500&fit=crop"
-                },
-                "url": {
-                  "link_type": "Web",
-                  "url": "http://google.com"
-                },
-                "description": [
-                  {
-                    "type": "paragraph",
-                    "text": "Nisi tempor qui elit ea eiusmod exercitation ea occaecat. Adipisicing laborum anim ad.",
-                    "spans": []
-                  }
-                ],
-                "brandContactOnePerson": [
-                  {
-                    "type": "paragraph",
-                    "text": "Qui Lorem commodo dolor ad minim dolor est proident. In anim amet officia laborum elit ea esse duis esse ullamco sit eiusmod.",
-                    "spans": []
-                  }
-                ],
-                "brandContactOnePhone": [
-                  {
-                    "type": "paragraph",
-                    "text": "Adipisicing pariatur ullamco cupidatat deserunt ex qui et veniam id nisi mollit duis. Adipisicing exercitation deserunt do sint.",
-                    "spans": []
-                  }
-                ],
-                "brandContactOneEmail": [
-                  {
-                    "type": "paragraph",
-                    "text": "Fugiat est consectetur eu. Voluptate commodo commodo pariatur. Fugiat est amet adipisicing pariatur pariatur dolore elit labore eiusmod fugiat.",
-                    "spans": []
-                  }
-                ],
-                "brandContactTwoPerson": [
-                  {
-                    "type": "paragraph",
-                    "text": "Labore laborum ex non adipisicing do eu tempor enim. Veniam occaecat sit dolore.",
-                    "spans": []
-                  }
-                ],
-                "brandContactTwoPhone": [
-                  {
-                    "type": "paragraph",
-                    "text": "Veniam in excepteur irure consequat minim veniam. Enim nisi do excepteur sint ipsum dolore.",
-                    "spans": []
-                  }
-                ],
-                "brandContactTwoEmail": [
-                  {
-                    "type": "paragraph",
-                    "text": "Ullamco pariatur quis eiusmod non Lorem sunt eiusmod sunt nostrud sit. Nostrud laborum aliqua adipisicing enim quis occaecat eiusmod nulla consequat. Quis ullamco ipsum nulla dolor nisi officia.",
-                    "spans": []
-                  }
-                ]
-              },
-              {
-                "uid": "whiteboard visionary action-items",
-                "brandName": [
-                  {
-                    "type": "paragraph",
-                    "text": "Sit commodo proident labore et irure.",
-                    "spans": []
-                  }
-                ],
-                "image": {
-                  "dimensions": {
-                    "width": 900,
-                    "height": 500
-                  },
-                  "alt": "Placeholder image",
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?w=900&h=500&fit=crop"
-                },
-                "url": {
-                  "link_type": "Web",
-                  "url": "https://slicemachine.dev"
-                },
-                "description": [
-                  {
-                    "type": "paragraph",
-                    "text": "Qui fugiat elit ex exercitation nisi. Fugiat cillum non ex.",
-                    "spans": []
-                  }
-                ],
-                "brandContactOnePerson": [
-                  {
-                    "type": "paragraph",
-                    "text": "Officia velit commodo nostrud eiusmod pariatur ea esse aute.",
-                    "spans": []
-                  }
-                ],
-                "brandContactOnePhone": [
-                  {
-                    "type": "paragraph",
-                    "text": "Cupidatat officia esse fugiat nulla aliquip dolor eu aliqua et fugiat. Veniam culpa in nostrud veniam commodo cupidatat aute labore aliqua sit incididunt et enim.",
-                    "spans": []
-                  }
-                ],
-                "brandContactOneEmail": [
-                  {
-                    "type": "paragraph",
-                    "text": "Adipisicing excepteur deserunt commodo culpa non voluptate voluptate sit minim. Et culpa nostrud eu ex dolor dolore magna deserunt nisi exercitation anim. Anim magna minim enim est velit non qui occaecat ullamco tempor cupidatat ullamco nostrud sit voluptate.",
-                    "spans": []
-                  }
-                ],
-                "brandContactTwoPerson": [
-                  {
-                    "type": "paragraph",
-                    "text": "Non dolor dolor fugiat eiusmod. Excepteur magna nulla culpa sit cillum. Pariatur culpa dolore id velit id cupidatat mollit irure quis.",
-                    "spans": []
-                  }
-                ],
-                "brandContactTwoPhone": [
-                  {
-                    "type": "paragraph",
-                    "text": "Sit incididunt pariatur do labore sunt consequat ipsum proident nulla ea. Est mollit voluptate reprehenderit tempor amet. Anim cupidatat irure esse est laboris esse occaecat quis.",
-                    "spans": []
-                  }
-                ],
-                "brandContactTwoEmail": [
-                  {
-                    "type": "paragraph",
-                    "text": "Non magna tempor aliquip velit. Magna anim ipsum Lorem eu sit est laboris commodo ut reprehenderit mollit qui elit. Exercitation minim tempor enim dolore culpa magna mollit eu enim.",
-                    "spans": []
-                  }
-                ]
-              },
-              {
-                "uid": "reintermediate innovative mindshare",
-                "brandName": [
-                  {
-                    "type": "paragraph",
-                    "text": "Exercitation et cillum irure velit sunt tempor consectetur consequat culpa labore exercitation commodo velit voluptate. Anim amet ad deserunt ea consectetur. Aliquip officia ex veniam eiusmod nisi cillum amet.",
-                    "spans": []
-                  }
-                ],
-                "image": {
-                  "dimensions": {
-                    "width": 900,
-                    "height": 500
-                  },
-                  "alt": "Placeholder image",
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43?w=900&h=500&fit=crop"
-                },
-                "url": {
-                  "link_type": "Web",
-                  "url": "http://twitter.com"
-                },
-                "description": [
-                  {
-                    "type": "paragraph",
-                    "text": "Pariatur ipsum sit nisi.",
-                    "spans": []
-                  }
-                ],
-                "brandContactOnePerson": [
-                  {
-                    "type": "paragraph",
-                    "text": "Pariatur mollit nisi nostrud. Aliqua incididunt proident dolore nulla proident sunt amet aliqua nisi sit proident. Commodo consectetur est mollit anim ad.",
-                    "spans": []
-                  }
-                ],
-                "brandContactOnePhone": [
-                  {
-                    "type": "paragraph",
-                    "text": "Adipisicing incididunt nisi consequat culpa enim qui magna aliquip ex. Qui laboris reprehenderit reprehenderit enim reprehenderit.",
-                    "spans": []
-                  }
-                ],
-                "brandContactOneEmail": [
-                  {
-                    "type": "paragraph",
-                    "text": "Quis incididunt labore voluptate elit do nostrud.",
-                    "spans": []
-                  }
-                ],
-                "brandContactTwoPerson": [
-                  {
-                    "type": "paragraph",
-                    "text": "Labore nostrud esse mollit in dolor. Non labore quis excepteur do laborum id occaecat tempor eu. Laboris do et duis ipsum irure do qui Lorem sint id.",
-                    "spans": []
-                  }
-                ],
-                "brandContactTwoPhone": [
-                  {
-                    "type": "paragraph",
-                    "text": "Excepteur irure aliqua duis officia elit ex officia id ex. Dolor deserunt aliqua sint. Esse mollit dolore excepteur incididunt nostrud Lorem quis duis elit proident dolor est.",
-                    "spans": []
-                  }
-                ],
-                "brandContactTwoEmail": [
-                  {
-                    "type": "paragraph",
-                    "text": "Sint in voluptate fugiat. Nisi sint culpa incididunt dolor anim laboris occaecat eu veniam officia anim.",
-                    "spans": []
-                  }
-                ]
-              },
-              {
-                "uid": "synergize proactive infomediaries",
-                "brandName": [
-                  {
-                    "type": "paragraph",
-                    "text": "Et reprehenderit enim ullamco minim. Excepteur aliqua cillum est aute laborum. Culpa do aliquip minim et ad dolore aliquip aliqua velit consectetur fugiat nostrud.",
-                    "spans": []
-                  }
-                ],
-                "image": {
-                  "dimensions": {
-                    "width": 900,
-                    "height": 500
-                  },
-                  "alt": "Placeholder image",
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=900&h=500&fit=crop"
-                },
-                "url": {
-                  "link_type": "Web",
-                  "url": "https://slicemachine.dev"
-                },
-                "description": [
-                  {
-                    "type": "paragraph",
-                    "text": "Deserunt proident ipsum voluptate ea ea ea magna.",
-                    "spans": []
-                  }
-                ],
-                "brandContactOnePerson": [
-                  {
-                    "type": "paragraph",
-                    "text": "Pariatur cupidatat irure id dolor incididunt ipsum culpa duis et quis. Nulla ullamco fugiat mollit incididunt officia ea eu do tempor mollit dolore quis cillum.",
-                    "spans": []
-                  }
-                ],
-                "brandContactOnePhone": [
-                  {
-                    "type": "paragraph",
-                    "text": "Quis veniam adipisicing sint nostrud. Quis laboris deserunt elit adipisicing quis consectetur veniam laborum excepteur nisi aute voluptate velit. Ipsum irure esse cillum labore et ut nisi pariatur amet cillum incididunt.",
-                    "spans": []
-                  }
-                ],
-                "brandContactOneEmail": [
-                  {
-                    "type": "paragraph",
-                    "text": "Fugiat et aliquip aute nulla Lorem fugiat minim aute quis proident velit aute in minim.",
-                    "spans": []
-                  }
-                ],
-                "brandContactTwoPerson": [
-                  {
-                    "type": "paragraph",
-                    "text": "Ipsum anim do cupidatat id.",
-                    "spans": []
-                  }
-                ],
-                "brandContactTwoPhone": [
-                  {
-                    "type": "paragraph",
-                    "text": "Laborum ad laboris consectetur culpa veniam aliqua. Quis sint cillum nostrud eu sunt irure consequat aute qui esse.",
-                    "spans": []
-                  }
-                ],
-                "brandContactTwoEmail": [
-                  {
-                    "type": "paragraph",
-                    "text": "Ex tempor consequat eiusmod ullamco fugiat est sint aliqua excepteur minim do est. Nisi quis dolore laborum ex in commodo enim ea exercitation id ipsum tempor. Pariatur excepteur laborum excepteur irure occaecat ea voluptate duis.",
-                    "spans": []
-                  }
-                ]
-              }
-            ],
-            "primary": {
-              "title": [
-                {
-                  "type": "heading1",
-                  "text": "Generate bricks-and-clicks e-tailers",
-                  "spans": []
-                }
-              ],
-              "description": [
-                {
-                  "type": "paragraph",
-                  "text": "Eiusmod quis do reprehenderit anim qui occaecat ex exercitation laborum dolor nisi. Laborum in aute ex labore magna esse reprehenderit exercitation ullamco. Fugiat reprehenderit nostrud exercitation magna do cillum anim ullamco adipisicing.",
-                  "spans": []
-                }
-              ],
-              "buttonLabel": [
-                {
-                  "type": "paragraph",
-                  "text": "Minim amet ad fugiat.",
+                  "text": "Ea occaecat esse proident ad anim veniam excepteur adipisicing incididunt ea adipisicing reprehenderit adipisicing.",
                   "spans": []
                 }
               ],
@@ -1119,7 +829,7 @@
                 },
                 "alt": "Placeholder image",
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89?w=900&h=500&fit=crop"
+                "url": "https://images.unsplash.com/photo-1560762484-813fc97650a0?w=900&h=500&fit=crop"
               },
               "imageSmall": {
                 "dimensions": {
@@ -1128,9 +838,61 @@
                 },
                 "alt": "Placeholder image",
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db?w=900&h=500&fit=crop"
+                "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88?w=900&h=500&fit=crop"
               },
-              "number": 8038
+              "number": 681
+            }
+          },
+          "withBrands": {
+            "variation": "withBrands",
+            "name": "Z brandami",
+            "slice_type": "podglad_strony",
+            "items": [],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Cultivate cross-media users",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Aliquip irure ullamco voluptate sunt do est quis ipsum. Sunt cupidatat veniam esse reprehenderit ex.",
+                  "spans": []
+                }
+              ],
+              "buttonLabel": [
+                {
+                  "type": "paragraph",
+                  "text": "Laboris non eiusmod labore dolor excepteur consectetur eiusmod laborum. Lorem culpa aute non cupidatat aliqua. Esse irure excepteur in ut quis nostrud et.",
+                  "spans": []
+                }
+              ],
+              "buttonLink": {
+                "link_type": "Web",
+                "url": "https://slicemachine.dev"
+              },
+              "imageBig": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": "Placeholder image",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=900&h=500&fit=crop"
+              },
+              "imageSmall": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": "Placeholder image",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=900&h=500&fit=crop"
+              },
+              "number": 4708
             }
           }
         },

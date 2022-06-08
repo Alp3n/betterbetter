@@ -22,6 +22,9 @@
             },
             "podglad_strony": {
               "type": "SharedSlice"
+            },
+            "galeria_brandow": {
+              "type": "SharedSlice"
             }
           }
         }

@@ -176,8 +176,9 @@ const StyledItem = styled.div`
     }
 
     > p {
+      font-family: 'Heebo';
       margin-left: none;
-      font-size: 10rem;
+      font-size: 13rem;
       font-weight: 900;
       display: inline-block;
     }

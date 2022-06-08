@@ -11,6 +11,98 @@
           "label": "Uid",
           "placeholder": ""
         }
+      },
+      "name": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Nazwa brandu",
+          "placeholder": "Wstaw nazwę brandu...",
+          "allowTargetBlank": true,
+          "single": "paragraph"
+        }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Opis brandu",
+          "placeholder": "Wstaw opis brandu",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "Zdjęcie brandu",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "contacts": {
+        "type": "Group",
+        "config": {
+          "label": "Lista kontaktów",
+          "fields": {
+            "name": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Nazwa kontkatu",
+                "placeholder": "Wstaw imię i nazwisko/biur/kontakt",
+                "allowTargetBlank": true,
+                "single": "paragraph"
+              }
+            },
+            "phone": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Numer telefonu",
+                "placeholder": "Wstaw numer telefonnu...",
+                "allowTargetBlank": true,
+                "single": "paragraph"
+              }
+            },
+            "email": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Email",
+                "placeholder": "Wstaw email",
+                "allowTargetBlank": true,
+                "single": "paragraph"
+              }
+            }
+          }
+        }
+      },
+      "url": {
+        "type": "Link",
+        "config": {
+          "label": "URL do strony",
+          "placeholder": "Wstaw URL do strony...",
+          "select": null
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    },
+    "SEO": {
+      "metaTitle": {
+        "type": "Text",
+        "config": {
+          "label": "Tytuł dla wyszukiwarek",
+          "placeholder": "Wstaw tytuł dla wyszukiwarek"
+        }
+      },
+      "metaDescription": {
+        "type": "Text",
+        "config": {
+          "label": "Opis dla wyszukiwarek",
+          "placeholder": "Wstaw opis dla wyszukiwarek..."
+        }
       }
     }
   }

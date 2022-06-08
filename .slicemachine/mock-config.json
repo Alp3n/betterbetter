@@ -34,7 +34,40 @@
         }
       }
     },
-    "brand": {}
+    "brand": {
+      "name": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "contacts": {
+        "name": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        },
+        "phone": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        },
+        "email": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        }
+      }
+    }
   },
   "slices": {
     "PelnaSzerokosc": {
@@ -99,50 +132,7 @@
         "items": {}
       },
       "withBrands": {
-        "items": {
-          "brandContactOnePerson": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          },
-          "description": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          },
-          "brandContactTwoPerson": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          },
-          "brandContactOnePhone": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          },
-          "brandContactOneEmail": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          },
-          "brandContactTwoPhone": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          },
-          "brandContactTwoEmail": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          }
-        }
+        "items": {}
       }
     },
     "MaleZdjecie": {
@@ -175,6 +165,30 @@
       }
     },
     "GaleriaZdjec": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "Brand": {
+      "default": {
+        "primary": {
+          "name": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "GaleriaBrandow": {
       "default": {
         "primary": {},
         "items": {}

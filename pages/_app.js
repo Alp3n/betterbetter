@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import '../styles/globals.css';
 import '../public/fonts/style.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import { PrismicProvider } from '@prismicio/react';
 import { PrismicPreview } from '@prismicio/next';
 import { linkResolver, repositoryName } from '../prismicio';

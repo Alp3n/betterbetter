@@ -62,13 +62,13 @@ export default function Header({ header }) {
 
 // 1016px mobile header
 const StyledBounded = styled(Bounded)`
-  position: sticky;
+  position: fixed;
+  left: 0;
   top: 0;
   width: 100%;
   background-color: white;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  z-index: 99;
-
+  z-index: 2;
   > div {
     position: relative;
     display: grid;
@@ -145,9 +145,9 @@ const StyledLink = styled(PrismicLink)`
 const StyledLogo = styled(PrismicLink)`
   position: relative;
   grid-area: logo;
-  width: 46px;
-  height: 46px;
-  margin: 16px 0;
+  width: 36px;
+  height: 36px;
+  margin: 8px 0;
   @media only screen and (min-width: 1103px) {
     width: 70px;
     height: 70px;

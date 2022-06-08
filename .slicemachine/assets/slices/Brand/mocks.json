@@ -1,0 +1,107 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "brand",
+    "items": [
+      {
+        "contactName": [
+          {
+            "type": "paragraph",
+            "text": "In voluptate nulla tempor pariatur minim elit elit pariatur laborum est ut Lorem officia. Non reprehenderit excepteur non enim eu. Labore sint eiusmod proident officia do pariatur velit proident elit.",
+            "spans": []
+          }
+        ],
+        "contactPhone": [
+          {
+            "type": "paragraph",
+            "text": "Id cillum laboris dolore. Ea qui exercitation voluptate proident dolore reprehenderit dolore cillum fugiat dolore amet amet do sunt. Mollit non est adipisicing officia elit veniam culpa quis ullamco exercitation et.",
+            "spans": []
+          }
+        ],
+        "contactEmail": [
+          {
+            "type": "paragraph",
+            "text": "Aute esse consectetur in veniam cupidatat quis Lorem aliquip.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "contactName": [
+          {
+            "type": "paragraph",
+            "text": "Commodo pariatur et do qui sunt.",
+            "spans": []
+          }
+        ],
+        "contactPhone": [
+          {
+            "type": "paragraph",
+            "text": "Ipsum proident sunt duis. Pariatur do irure commodo nisi fugiat sint anim duis in sunt nulla reprehenderit labore qui.",
+            "spans": []
+          }
+        ],
+        "contactEmail": [
+          {
+            "type": "paragraph",
+            "text": "Duis velit ea et quis do consequat aliqua cupidatat proident excepteur ex exercitation consectetur est. Aliquip ex pariatur culpa sint pariatur in enim do eu.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "contactName": [
+          {
+            "type": "paragraph",
+            "text": "Excepteur reprehenderit nulla fugiat.",
+            "spans": []
+          }
+        ],
+        "contactPhone": [
+          {
+            "type": "paragraph",
+            "text": "Aliquip exercitation laboris labore est irure pariatur qui. Occaecat labore nulla in in voluptate anim. Commodo mollit incididunt reprehenderit deserunt.",
+            "spans": []
+          }
+        ],
+        "contactEmail": [
+          {
+            "type": "paragraph",
+            "text": "Do exercitation sunt tempor cupidatat. Sint nulla duis deserunt. Adipisicing qui quis nulla aute ut Lorem amet eu dolore pariatur sit cupidatat eiusmod eiusmod.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {
+      "name": [
+        {
+          "type": "paragraph",
+          "text": "Veniam nostrud ea voluptate dolor sint est tempor ea. Ad duis do amet est consequat nostrud. Ad excepteur nostrud pariatur ut officia eiusmod exercitation Lorem nulla do commodo incididunt duis.",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Magna qui velit nulla do dolor laboris laboris enim. Aute aliquip Lorem mollit amet.",
+          "spans": []
+        }
+      ],
+      "url": {
+        "link_type": "Web",
+        "url": "https://slicemachine.dev"
+      },
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": "Placeholder image",
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117?w=900&h=500&fit=crop"
+      }
+    }
+  }
+]

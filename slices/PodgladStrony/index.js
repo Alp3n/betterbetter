@@ -6,15 +6,23 @@ import Bounded from '../../components/bounded';
 import Button from '../../components/button';
 import Image from '../../components/image';
 import Modal from '../../components/modal';
+import PortalModal from '../../components/portalModal';
 
-const PodgladStrony = ({ slice }) => {
+const PodgladStrony = ({ slice, context }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const openModal = () => setModalIsOpen(true);
+  const openModal = (item) => {
+    setSelectedItem(item);
+    setModalIsOpen(true);
+  };
   const closeModal = () => setModalIsOpen(false);
-
+  const [selectedItem, setSelectedItem] = useState(null);
+  console.log(slice.primary.title[0].text);
   return (
     <>
-      <Bounded as='section' margin>
+      <Bounded
+        as='section'
+        margin={slice.primary.title[0].text === 'Showroom' ? false : true}
+      >
         <Grid variation={slice.primary.number}>
           <ImagesSide variation={slice.primary.number}>
             <SmallImage>
@@ -55,16 +63,11 @@ const PodgladStrony = ({ slice }) => {
             />
             {slice.variation === 'withBrands' ? (
               <BrandsList>
-                {prismicH.isFilled.group(slice.items)
-                  ? slice.items.map((item) => (
+                {prismicH.isFilled.group(context)
+                  ? context.map((item) => (
                       <React.Fragment key={item.uid}>
-                        <Modal
-                          isOpen={modalIsOpen}
-                          onRequestClose={closeModal}
-                          item={item}
-                        />
-                        <BrandItem onClick={openModal}>
-                          <PrismicRichText field={item.brandName} />
+                        <BrandItem onClick={() => openModal(item)}>
+                          <PrismicRichText field={item.data.name} />
                           <BrandArrow>&#62;</BrandArrow>
                         </BrandItem>
                       </React.Fragment>
@@ -75,6 +78,11 @@ const PodgladStrony = ({ slice }) => {
           </DescriptionSide>
         </Grid>
       </Bounded>
+      {slice.variation === 'withBrands' ? (
+        <PortalModal open={modalIsOpen} onClose={() => setModalIsOpen(false)}>
+          <Modal setIsOpen={setModalIsOpen} item={selectedItem} />
+        </PortalModal>
+      ) : null}
     </>
   );
 };
@@ -99,7 +107,7 @@ const Grid = styled.div`
         ? `grid-template-columns: auto 1fr;
         grid-template-areas: 'descriptionSide imagesSide';`
         : null}
-    gap: 6rem;
+    gap: 3rem;
   }
 `;
 const ImagesSide = styled.div`
@@ -219,11 +227,13 @@ const BrandsList = styled.div`
   gap: 18px;
   @media only screen and (min-width: 640px) {
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: row;
     gap: 1rem 2rem;
+    align-items: stretch;
   }
 `;
 
-const BrandItem = styled.a`
+const BrandItem = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -234,6 +244,9 @@ const BrandItem = styled.a`
   background-size: 200%;
   transition: 0.5s ease-out;
   color: black;
+  > p {
+    font-size: 15px;
+  }
 
   &:hover {
     color: white;

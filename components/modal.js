@@ -1,102 +1,69 @@
-import { useState } from 'react';
-import styled from '@emotion/styled';
-import Modal from 'react-modal';
+// import { useState } from 'react';
 import { PrismicLink, PrismicRichText } from '@prismicio/react';
+import * as prismicH from '@prismicio/helpers';
+import styled from '@emotion/styled';
 import Image from './image';
 
-const MyModal = ({ isOpen, onRequestClose, item }) => {
-  Modal.setAppElement('#__next');
-  console.log(item);
+const MyModal = ({ setIsOpen, item }) => {
+  if (!item) return null;
   return (
-    <StyledModal
-      isOpen={isOpen}
-      onRequestClose={onRequestClose}
-      preventScroll={true}
-      parentSelector={() => document.querySelector('#__next')}
-      style={{
-        overlay: {
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          zIndex: 9999,
-          backgroundColor: 'rgba(0, 0, 0, 0.75)',
-        },
-      }}
-    >
-      <ModalBody>
-        <StyledImage>
-          <Image src={item.image.url} alt='' layout='fill' />
-        </StyledImage>
-        <StyledTitle field={item.brandName} />
-        <StyledDescription field={item.description} />
-        <StyledContacts>
-          {item.brandContactOnePerson ? (
-            <StyledContact>
-              <StyledContactHeader>
-                <StyledBlackBox />
-                <StyledContactName field={item.brandContactOnePerson} />
-              </StyledContactHeader>
-              <StyledContactInfo>
-                <PrismicRichText field={item.brandContactOnePhone} />
-                <PrismicRichText field={item.brandContactOneEmail} />
-              </StyledContactInfo>
-            </StyledContact>
-          ) : null}
-          {item.brandContactTwoPerson ? (
-            <StyledContact>
-              <StyledContactHeader>
-                <StyledBlackBox />
-                <StyledContactName field={item.brandContactTwoPerson} />
-              </StyledContactHeader>
-              <StyledContactInfo>
-                <PrismicRichText field={item.brandContactTwoPhone} />
-                <PrismicRichText field={item.brandContactTwoEmail} />
-              </StyledContactInfo>
-            </StyledContact>
-          ) : null}
-        </StyledContacts>
-        <StyledURL>
-          <StyledBlackBox />
-          <PrismicLink field={item.url}>ragno.it</PrismicLink>
-        </StyledURL>
-      </ModalBody>
-      <CloseButton onClick={onRequestClose}>X</CloseButton>
-    </StyledModal>
+    <ModalBody>
+      <StyledImage>
+        <Image
+          src={item.data.image.url}
+          alt=''
+          layout='fill'
+          width={item.data.image.dimensions.width}
+          height={item.data.image.dimensions.height}
+        />
+      </StyledImage>
+      <StyledTitle>
+        <PrismicRichText field={item.data.name} />
+      </StyledTitle>
+      <StyledDescription field={item.data.description} />
+      <StyledContacts>
+        {prismicH.isFilled.group(item.data.contacts)
+          ? item.data.contacts.map((contact) => (
+              <StyledContact key={contact.phone}>
+                <StyledContactHeader>
+                  <StyledBlackBox />
+                  <StyledContactName field={contact.name} />
+                </StyledContactHeader>
+                <StyledContactInfo>
+                  <PrismicRichText field={contact.phone} />
+                  <PrismicRichText field={contact.email} />
+                </StyledContactInfo>
+              </StyledContact>
+            ))
+          : null}
+      </StyledContacts>
+      <StyledURL>
+        <StyledBlackBox />
+        <PrismicLink field={item.data.url}>WEBSITE</PrismicLink>
+      </StyledURL>
+      <ButtonsWrapper>
+        <ArrowButton color={'black'}>{`<`}</ArrowButton>
+        <ArrowButton color={'white'}>{`>`}</ArrowButton>
+        <CloseButton onClick={() => setIsOpen(false)}>x</CloseButton>
+      </ButtonsWrapper>
+    </ModalBody>
   );
 };
 
 export default MyModal;
 
-const StyledModal = styled(Modal)`
-  position: relative;
-  display: grid;
-  place-content: center;
-  gap: 1rem;
-  /* padding: 1rem; */
-  @media only screen and (min-width: 1102px) {
-    top: 3%;
-    padding: 4rem;
-    grid-template-columns: 1fr 96px;
-  }
-`;
-
 const ModalBody = styled.div`
   display: grid;
-  grid-template-columns: 1fr minmax(500px, 1fr);
   grid-template-areas:
     'image'
     'title'
     'description'
     'contacts'
     'url';
-  width: 100%;
-  height: 70vh;
-  background-color: white;
-  padding: 3rem 3rem 3rem 10rem;
+  gap: 2rem;
   @media only screen and (min-width: 1102px) {
-    height: auto;
+    position: relative;
+    grid-template-columns: 1fr minmax(600px, 900px);
     grid-template-areas:
       'title image'
       'description image'
@@ -106,26 +73,67 @@ const ModalBody = styled.div`
   }
 `;
 
-const CloseButton = styled.button`
+const ButtonsWrapper = styled.div`
+  position: sticky;
+  display: grid;
+  grid-template-columns: 1fr 1fr 60px;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.2);
+
+  @media only screen and (min-width: 1102px) {
+    position: sticky;
+    grid-template-columns: 60px 60px 60px;
+    width: 30%;
+    left: 50%;
+    height: 1px;
+  }
+`;
+const ArrowButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
   width: 100%;
-  height: 96px;
-  background-color: white;
+  height: 100%;
+  ${({ color }) =>
+    color === 'black'
+      ? 'background-color: black; color: white;'
+      : 'background-color: white; color: black;'};
+  @media only screen and (min-width: 1102px) {
+    width: 70px;
+  }
+`;
+const CloseButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  background-color: black;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
   border: none;
-  padding: 3rem;
 
   :hover {
-    color: black;
+    color: grey;
     background-color: #f0f0f0;
     cursor: pointer;
   }
+  @media only screen and (min-width: 1102px) {
+    position: relative;
+    width: 100%;
+    /* padding: 3rem; */
+  }
 `;
 
-const StyledTitle = styled(PrismicRichText)`
-  p {
-    font-size: 4rem !important;
+const StyledTitle = styled.span`
+  > p {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bold;
   }
   grid-area: title;
 `;
@@ -134,14 +142,17 @@ const StyledDescription = styled(PrismicRichText)`
 `;
 const StyledImage = styled.div`
   position: relative;
-
   background-color: grey;
-  width: auto;
-  height: 320px;
+  width: 100%;
+  height: 200px;
   grid-area: image;
 
+  > span {
+    object-fit: contain;
+  }
+
   @media only screen and (min-width: 1102px) {
-    height: 580px;
+    height: 100%;
     grid-template-columns: 1fr 1fr;
   }
 `;
@@ -149,7 +160,7 @@ const StyledContacts = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-area: contacts;
-
+  gap: 2rem;
   @media only screen and (min-width: 1102px) {
     grid-template-columns: 1fr 1fr;
   }
