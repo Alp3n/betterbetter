@@ -174,17 +174,17 @@ const StyledBlackBox = styled.div`
 
 const StyledContact = styled.div`
   display: grid;
-  gap: 2rem;
+  gap: 1rem;
   grid-template-columns: 30px 1fr;
   grid-template-areas:
     'header header'
-    '. info';
+    'info info';
 `;
 
 const StyledContactHeader = styled.div`
   display: grid;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   grid-template-columns: 30px 1fr;
   grid-area: header;
 `;
@@ -201,6 +201,6 @@ const StyledURL = styled.div`
   display: grid;
   grid-template-columns: 30px 1fr;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   grid-area: url;
 `;

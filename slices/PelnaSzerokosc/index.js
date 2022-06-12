@@ -30,7 +30,7 @@ const PelnaSzerokosc = ({ slice }) => {
       <StyledBoundedBody>
         <StyledBody>
           {slice.items.map((item) => (
-            <StyledItem key={item.uid}>
+            <StyledItem key={item.uid} href={`#${item.number[0].text}`}>
               <PrismicRichText field={item.number} />
               <PrismicRichText field={item.room} />
             </StyledItem>
@@ -128,7 +128,7 @@ const StyledBody = styled.div`
   }
 `;
 
-const StyledItem = styled.div`
+const StyledItem = styled.a`
   display: grid;
   grid-template-columns: auto 1fr;
   flex-direction: row;

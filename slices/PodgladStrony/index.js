@@ -22,6 +22,7 @@ const PodgladStrony = ({ slice, context }) => {
       <Bounded
         as='section'
         margin={slice.primary.title[0].text === 'Showroom' ? false : true}
+        id={slice.primary.number}
       >
         <Grid variation={slice.primary.number}>
           <ImagesSide variation={slice.primary.number}>
@@ -61,21 +62,21 @@ const PodgladStrony = ({ slice, context }) => {
               label={slice.primary.buttonLabel}
               link={slice.primary.buttonLink}
             />
-            {slice.variation === 'withBrands' ? (
-              <BrandsList>
-                {prismicH.isFilled.group(context)
-                  ? context.map((item) => (
-                      <React.Fragment key={item.uid}>
-                        <BrandItem onClick={() => openModal(item)}>
-                          <PrismicRichText field={item.data.name} />
-                          <BrandArrow>&#62;</BrandArrow>
-                        </BrandItem>
-                      </React.Fragment>
-                    ))
-                  : null}
-              </BrandsList>
-            ) : null}
           </DescriptionSide>
+          {slice.variation === 'withBrands' ? (
+            <BrandsList>
+              {prismicH.isFilled.group(context)
+                ? context.map((item) => (
+                    <React.Fragment key={item.uid}>
+                      <BrandItem onClick={() => openModal(item)}>
+                        <PrismicRichText field={item.data.name} />
+                        <BrandArrow>&#62;</BrandArrow>
+                      </BrandItem>
+                    </React.Fragment>
+                  ))
+                : null}
+            </BrandsList>
+          ) : null}
         </Grid>
       </Bounded>
       {slice.variation === 'withBrands' ? (
@@ -95,19 +96,37 @@ const Grid = styled.div`
   gap: 1rem;
   grid-template-areas:
     'descriptionSide'
-    'imagesSide';
+    'imagesSide'
+    'brandsList';
   @media only screen and (min-width: 640px) {
     grid-template-columns: 1fr 1fr;
     ${({ variation }) =>
-      variation === 1 || 3
-        ? `grid-template-areas: 'imagesSide descriptionSide';`
+      variation === 1
+        ? `grid-template-areas: 
+        'imagesSide descriptionSide' 
+        'brandsList brandsList';`
         : null}
+
     ${({ variation }) =>
       variation === 2
         ? `grid-template-columns: auto 1fr;
         grid-template-areas: 'descriptionSide imagesSide';`
         : null}
+
+    ${({ variation }) =>
+      variation === 3
+        ? `grid-template-areas: 'imagesSide descriptionSide';`
+        : null}
     gap: 3rem;
+  }
+
+  @media only screen and (min-width: 1240px) {
+    ${({ variation }) =>
+      variation === 1
+        ? `grid-template-areas: 
+        'imagesSide descriptionSide' 
+        'imagesSide brandsList';`
+        : null}
   }
 `;
 const ImagesSide = styled.div`
@@ -138,8 +157,35 @@ const ImagesSide = styled.div`
       : null}
   grid-area: imagesSide;
   overflow-x: scroll;
+  ${({ variation }) => (variation === 1 ? `margin-bottom: 2rem;` : null)}
 
   @media only screen and (min-width: 640px) {
+    ${({ variation }) => (variation === 1 ? `margin-bottom: 0;` : null)}
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 200px);
+    ${({ variation }) =>
+      variation === 1
+        ? `grid-template-areas: 'smallImage bigImage'
+    'number bigImage';`
+        : null}
+    ${({ variation }) =>
+      variation === 2
+        ? `
+        grid-template-columns: 200px 150px 150px;
+      grid-template-rows: 75px 200px 200px; 
+    grid-template-areas: 
+    'number bigImage bigImage'
+    'number bigImage bigImage'
+    'smallImage bigImage bigImage';`
+        : null}
+  ${({ variation }) =>
+      variation === 3
+        ? `grid-template-areas: 'bigImage number'
+    'bigImage smallImage ';`
+        : null}
+    overflow-x: unset;
+  }
+  @media only screen and (min-width: 1102px) {
     grid-template-columns: repeat(2, 300px);
     grid-template-rows: repeat(2, 300px);
     ${({ variation }) =>
@@ -165,16 +211,17 @@ const ImagesSide = styled.div`
     overflow-x: unset;
   }
 `;
+
 const DescriptionSide = styled.div`
   display: grid;
   grid-template-areas:
     'title'
     'description'
-    'button'
-    'brandsList';
+    'button';
   grid-template-rows: auto auto auto 1fr;
   gap: 2rem;
   grid-area: descriptionSide;
+
   @media only screen and (min-width: 640px) {
     gap: 3rem;
   }
@@ -213,11 +260,13 @@ const Number = styled.p`
     place-items: end end;
     grid-area: number;
     place-self: end end;
-    ${({ variation }) => (variation === 3 ? `place-self: start start;` : null)}
     ${({ variation }) =>
+      variation === 3 ? `place-self: start start;` : null}/* ${({
+      variation,
+    }) =>
       variation === 2
         ? `position: absolute; right: 3rem; bottom: 2rem; grid-area: unset;`
-        : null}
+        : null} */
   }
 `;
 
@@ -225,6 +274,7 @@ const BrandsList = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 18px;
+  grid-area: brandsList;
   @media only screen and (min-width: 640px) {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-flow: row;
@@ -257,6 +307,10 @@ const BrandItem = styled.div`
   &:not(:hover) {
     transition: 0.3s ease-in 0.2s;
     background-position: right;
+  }
+
+  @media only screen and (max-width: 1540px) {
+    height: auto;
   }
 `;
 

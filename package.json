@@ -23,6 +23,7 @@
     "react-modal": "^3.15.1",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
+    "swiper": "^8.2.3",
     "wicg-inert": "^3.1.1"
   },
   "devDependencies": {

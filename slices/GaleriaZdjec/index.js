@@ -32,7 +32,7 @@ const ImagesSide = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 200px);
   grid-template-rows: repeat(2, 200px);
-  gap: 1rem 0;
+  gap: 1rem 1rem;
   grid-template-areas:
     'small high'
     '. high';

@@ -62,7 +62,7 @@ export default function Header({ header }) {
 
 // 1016px mobile header
 const StyledBounded = styled(Bounded)`
-  position: fixed;
+  position: sticky;
   left: 0;
   top: 0;
   width: 100%;
@@ -280,12 +280,12 @@ const StyledMenu = styled.nav`
     }
     100% {
       left: 0;
-      top: 78px;
+      top: 52px;
     }
   }
   @keyframes slideUp {
     0% {
-      top: 78px;
+      top: 52px;
       left: 0;
     }
     100% {
