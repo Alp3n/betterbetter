@@ -18,7 +18,7 @@ const Page = ({ page, menu }) => {
         <StyledTexts>
           <StyledTitle field={page.data.title} />
           <StyledDescirption field={page.data.description} />
-          <StyledLine />
+          {/* <StyledLine /> */}
         </StyledTexts>
       </StyledBounded>
       <StyledDynamicBounded>
@@ -87,7 +87,9 @@ const StyledDynamicBounded = styled(Bounded)`
       'images'
       'texts';
 
+    margin-top: 3rem;
     @media only screen and (min-width: 1102px) {
+      margin-top: 1rem;
       grid-template-columns: 1fr 1fr;
       gap: 6rem;
       grid-template-areas: 'images texts';
@@ -106,7 +108,7 @@ const StyledImage = styled.div`
   }
 
   @media only screen and (min-width: 1102px) {
-    width: 600px;
+    /* width: 600px; */
     height: 600px;
   } ;
 `;
@@ -121,6 +123,8 @@ const StyledTexts = styled.div`
   grid-area: texts;
   place-content: center;
   gap: 2rem;
+  border-bottom: 1px solid black;
+  margin-bottom: 3rem;
 
   @media only screen and (max-width: 640px) {
     margin: 0 5%;

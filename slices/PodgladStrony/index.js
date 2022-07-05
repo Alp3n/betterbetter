@@ -7,16 +7,31 @@ import Button from '../../components/button';
 import Image from '../../components/image';
 import Modal from '../../components/modal';
 import PortalModal from '../../components/portalModal';
+import next from 'next';
 
 const PodgladStrony = ({ slice, context }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+
   const openModal = (item) => {
     setSelectedItem(item);
     setModalIsOpen(true);
   };
-  const closeModal = () => setModalIsOpen(false);
-  const [selectedItem, setSelectedItem] = useState(null);
+
+  const nextItem = () => {
+    let currentItem = context.indexOf(selectedItem);
+    if (currentItem === context.length - 1) return;
+    setSelectedItem(context[currentItem + 1]);
+  };
+
+  const previouseItem = () => {
+    let currentItem = context.indexOf(selectedItem);
+    if (currentItem === 0) return;
+    setSelectedItem(context[currentItem - 1]);
+  };
+
   console.log(slice.primary.title[0].text);
+  console.log(context.indexOf(selectedItem));
   return (
     <>
       <Bounded
@@ -81,7 +96,12 @@ const PodgladStrony = ({ slice, context }) => {
       </Bounded>
       {slice.variation === 'withBrands' ? (
         <PortalModal open={modalIsOpen} onClose={() => setModalIsOpen(false)}>
-          <Modal setIsOpen={setModalIsOpen} item={selectedItem} />
+          <Modal
+            setIsOpen={setModalIsOpen}
+            item={selectedItem}
+            nextItem={nextItem}
+            previouseItem={previouseItem}
+          />
         </PortalModal>
       ) : null}
     </>

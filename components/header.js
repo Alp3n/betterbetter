@@ -76,7 +76,7 @@ const StyledBounded = styled(Bounded)`
     grid-template-areas: 'logo menuButton' 'menu menu';
     align-items: center;
     z-index: 99;
-    @media only screen and (min-width: 1103px) {
+    @media only screen and (min-width: 1102px) {
       grid-template-columns: 1fr 100px 1fr;
       place-items: center;
       grid-template-areas: 'nav logo social';
@@ -93,7 +93,7 @@ const StyledBounded = styled(Bounded)`
 
 const StyledNav = styled.nav`
   display: none;
-  @media only screen and (min-width: 1103px) {
+  @media only screen and (min-width: 1102px) {
     display: grid;
     grid-template-columns: repeat(3, auto);
     place-self: center start;
@@ -148,7 +148,7 @@ const StyledLogo = styled(PrismicLink)`
   width: 36px;
   height: 36px;
   margin: 8px 0;
-  @media only screen and (min-width: 1103px) {
+  @media only screen and (min-width: 1102px) {
     width: 70px;
     height: 70px;
     margin: 16px 0;
@@ -157,7 +157,7 @@ const StyledLogo = styled(PrismicLink)`
 
 const StyledSocial = styled.div`
   display: none;
-  @media only screen and (min-width: 1103px) {
+  @media only screen and (min-width: 1102px) {
     display: grid;
     grid-template-columns: repeat(4, auto);
     place-content: end;

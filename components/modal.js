@@ -4,7 +4,7 @@ import * as prismicH from '@prismicio/helpers';
 import styled from '@emotion/styled';
 import Image from './image';
 
-const MyModal = ({ setIsOpen, item }) => {
+const MyModal = ({ setIsOpen, item, nextItem, previouseItem }) => {
   if (!item) return null;
   return (
     <ModalBody>
@@ -24,7 +24,7 @@ const MyModal = ({ setIsOpen, item }) => {
       <StyledContacts>
         {prismicH.isFilled.group(item.data.contacts)
           ? item.data.contacts.map((contact) => (
-              <StyledContact key={contact.phone}>
+              <StyledContact key={contact.name}>
                 <StyledContactHeader>
                   <StyledBlackBox />
                   <StyledContactName field={contact.name} />
@@ -42,8 +42,14 @@ const MyModal = ({ setIsOpen, item }) => {
         <PrismicLink field={item.data.url}>WEBSITE</PrismicLink>
       </StyledURL>
       <ButtonsWrapper>
-        <ArrowButton color={'black'}>{`<`}</ArrowButton>
-        <ArrowButton color={'white'}>{`>`}</ArrowButton>
+        <ArrowButton
+          onClick={() => previouseItem()}
+          color={'black'}
+        >{`<`}</ArrowButton>
+        <ArrowButton
+          onClick={() => nextItem()}
+          color={'white'}
+        >{`>`}</ArrowButton>
         <CloseButton onClick={() => setIsOpen(false)}>x</CloseButton>
       </ButtonsWrapper>
     </ModalBody>
@@ -83,11 +89,13 @@ const ButtonsWrapper = styled.div`
   box-shadow: 0 2px 10px rgb(0 0 0 / 0.2);
 
   @media only screen and (min-width: 1102px) {
-    position: sticky;
+    position: fixed;
     grid-template-columns: 60px 60px 60px;
-    width: 30%;
+    width: 180px;
     left: 50%;
-    height: 1px;
+    margin-left: -90px;
+    bottom: 1rem;
+    /* height: 1px; */
   }
 `;
 const ArrowButton = styled.div`
@@ -103,7 +111,13 @@ const ArrowButton = styled.div`
       ? 'background-color: black; color: white;'
       : 'background-color: white; color: black;'};
   @media only screen and (min-width: 1102px) {
-    width: 70px;
+    width: 60px;
+    padding: 8px;
+
+    :hover {
+      cursor: pointer;
+      background-color: #b1b1b1;
+    }
   }
 `;
 const CloseButton = styled.div`
@@ -118,8 +132,7 @@ const CloseButton = styled.div`
   border: none;
 
   :hover {
-    color: grey;
-    background-color: #f0f0f0;
+    background-color: #b1b1b1;
     cursor: pointer;
   }
   @media only screen and (min-width: 1102px) {
