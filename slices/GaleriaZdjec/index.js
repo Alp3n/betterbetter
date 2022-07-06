@@ -5,7 +5,6 @@ import styled from '@emotion/styled';
 import Image from '../../components/image';
 
 const GaleriaZdjec = ({ slice }) => {
-  console.log(slice);
   return (
     <ImagesSide>
       {slice.items.map((item, i) => (

@@ -7,7 +7,6 @@ import Button from '../../components/button';
 import Image from '../../components/image';
 import Modal from '../../components/modal';
 import PortalModal from '../../components/portalModal';
-import next from 'next';
 
 const PodgladStrony = ({ slice, context }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -30,8 +29,6 @@ const PodgladStrony = ({ slice, context }) => {
     setSelectedItem(context[currentItem - 1]);
   };
 
-  console.log(slice.primary.title[0].text);
-  console.log(context.indexOf(selectedItem));
   return (
     <>
       <Bounded

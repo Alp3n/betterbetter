@@ -12,7 +12,7 @@ const MyModal = ({ setIsOpen, item, nextItem, previouseItem }) => {
         <Image
           src={item.data.image.url}
           alt=''
-          layout='fill'
+          layout='responsive'
           width={item.data.image.dimensions.width}
           height={item.data.image.dimensions.height}
         />
@@ -39,7 +39,13 @@ const MyModal = ({ setIsOpen, item, nextItem, previouseItem }) => {
       </StyledContacts>
       <StyledURL>
         <StyledBlackBox />
-        <PrismicLink field={item.data.url}>WEBSITE</PrismicLink>
+        <PrismicLink
+          field={item.data.url}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          WEBSITE
+        </PrismicLink>
       </StyledURL>
       <ButtonsWrapper>
         <ArrowButton
@@ -69,7 +75,7 @@ const ModalBody = styled.div`
   gap: 2rem;
   @media only screen and (min-width: 1102px) {
     position: relative;
-    grid-template-columns: 1fr minmax(600px, 900px);
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
       'title image'
       'description image'
@@ -155,9 +161,7 @@ const StyledDescription = styled(PrismicRichText)`
 `;
 const StyledImage = styled.div`
   position: relative;
-  background-color: grey;
-  width: 100%;
-  height: 200px;
+  /* background-color: grey; */
   grid-area: image;
 
   > span {
