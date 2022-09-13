@@ -1,0 +1,70 @@
+{
+  "id": "galeria_wydarzen",
+  "type": "SharedSlice",
+  "name": "GaleriaWydarzen",
+  "description": "GaleriaWydarzen",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "GaleriaWydarzen",
+      "primary": {},
+      "items": {
+        "eventImage": {
+          "type": "Image",
+          "config": {
+            "label": "Zdjęcie",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "eventLink": {
+          "type": "Link",
+          "config": {
+            "label": "Link do wydarzenia",
+            "placeholder": "Dodaj URL do wydarzenia...",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "eventName": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Nazwa wydarzenia",
+            "placeholder": "Wpisz nazwę wydarzenia...",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "eventDescription": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Opis wydarzenia",
+            "placeholder": "Opisz krótko wydarzenie...",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "eventDate": {
+          "type": "Date",
+          "config": {
+            "label": "Data wydarzenia",
+            "placeholder": "Wybierz datę wydarzenia..."
+          }
+        },
+        "eventTime": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Godzina wydarzenia",
+            "placeholder": "Wpisz godzinę np. 18:00",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

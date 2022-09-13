@@ -76,8 +76,9 @@
       "url": {
         "type": "Link",
         "config": {
-          "label": "URL do strony",
+          "label": "Link do strony",
           "placeholder": "Wstaw URL do strony...",
+          "allowTargetBlank": false,
           "select": null
         }
       },

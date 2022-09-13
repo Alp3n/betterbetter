@@ -5,6 +5,7 @@ import styled from '@emotion/styled';
 import Image from '../../components/image';
 
 const GaleriaZdjec = ({ slice }) => {
+  //TODO FIX SLIDING GALLERY
   return (
     <ImagesSide>
       {slice.items.map((item, i) => (

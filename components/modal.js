@@ -6,6 +6,7 @@ import Image from './image';
 
 const MyModal = ({ setIsOpen, item, nextItem, previouseItem }) => {
   if (!item) return null;
+  //TODO FIX THIS SHIT LIKE NTOBETA OR JUST DIALOG
   return (
     <ModalBody>
       <StyledImage>

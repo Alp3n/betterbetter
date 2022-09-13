@@ -3,6 +3,11 @@ import styled from '@emotion/styled';
 import { PrismicLink, PrismicRichText } from '@prismicio/react';
 import Bounded from './bounded';
 import Image from './image';
+import Mail from '../public/static/svg/mail.svg';
+import Facebook from '../public/static/svg/facebook.svg';
+import Instagram from '../public/static/svg/instagram.svg';
+import Linkedin from '../public/static/svg/linkedin.svg';
+import Location from '../public/static/svg/location.svg';
 
 export default function Header({ header }) {
   const [isOpen, setOpen] = useState('initial');
@@ -23,15 +28,25 @@ export default function Header({ header }) {
           ))}
         </StyledNav>
         <StyledLogo field={header.homeLink}>
-          <Image src={header.logo.url} layout='fill' alt='' />
+          <Image src={header.logo.url} layout='fill' alt={header.logo.alt} />
         </StyledLogo>
-        <StyledSocial>
-          {header.socialLinks.map((item, i) => (
-            <StyledSVG key={i} field={item.link}>
-              <Image src={item.icon.url} layout='fill' alt='' />
-            </StyledSVG>
-          ))}
-        </StyledSocial>
+        <StyledRightSide>
+          <StyledLink field={header.eventsLink} myarea='events'>
+            <PrismicRichText field={header.eventsLabel} />
+          </StyledLink>
+          <StyledSocial>
+            {header.socialLinks.map((item, i) => (
+              <StyledSVG key={i} field={item.link} target='_blank'>
+                {item.label === 'location' && <Location />}
+                {item.label === 'mail' && <Mail />}
+                {item.label === 'instagram' && <Instagram />}
+                {item.label === 'linkedin' && <Linkedin />}
+                {item.label === 'facebook' && <Facebook />}
+              </StyledSVG>
+            ))}
+          </StyledSocial>
+        </StyledRightSide>
+
         <MenuButton onClick={handleMenu} className={isOpen}>
           <span />
           <span />
@@ -47,11 +62,18 @@ export default function Header({ header }) {
               <PrismicRichText field={item.label} />
             </StyledLink>
           ))}
+          <StyledLink field={header.eventsLink} onClick={handleMenu}>
+            <PrismicRichText field={header.eventsLabel} />
+          </StyledLink>
         </StyledMenuLinks>
         <StyledMenuSocial>
           {header.socialLinks.map((item, i) => (
-            <StyledSVG key={i} field={item.link}>
-              <Image src={item.icon.url} layout='fill' alt='' />
+            <StyledSVG key={i} field={item.link} target='_blank'>
+              {item.label === 'location' && <Location />}
+              {item.label === 'mail' && <Mail />}
+              {item.label === 'instagram' && <Instagram />}
+              {item.label === 'linkedin' && <Linkedin />}
+              {item.label === 'facebook' && <Facebook />}
             </StyledSVG>
           ))}
         </StyledMenuSocial>
@@ -79,7 +101,7 @@ const StyledBounded = styled(Bounded)`
     @media only screen and (min-width: 1102px) {
       grid-template-columns: 1fr 100px 1fr;
       place-items: center;
-      grid-template-areas: 'nav logo social';
+      grid-template-areas: 'nav logo rightSide';
     }
   }
 `;
@@ -108,7 +130,7 @@ const StyledLink = styled(PrismicLink)`
   font-weight: bold;
   position: relative;
   display: inline-block;
-
+  ${({ myarea }) => (myarea ? `grid-area: ${myarea}` : null)}
   p {
     font-family: 'Gotham Black';
   }
@@ -155,11 +177,25 @@ const StyledLogo = styled(PrismicLink)`
   }
 `;
 
+const StyledRightSide = styled.div`
+  display: none;
+  @media only screen and (min-width: 1102px) {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    place-content: end;
+    align-items: center;
+    gap: 10%;
+    width: 100%;
+    grid-area: rightSide;
+    grid-template-areas: 'events social';
+  }
+`;
+
 const StyledSocial = styled.div`
   display: none;
   @media only screen and (min-width: 1102px) {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(5, auto);
     place-content: end;
     gap: 2rem;
     width: 100%;
@@ -305,6 +341,6 @@ const StyledMenuLinks = styled.div`
 `;
 
 const StyledMenuSocial = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: flex;
+  gap: 1.5rem;
 `;

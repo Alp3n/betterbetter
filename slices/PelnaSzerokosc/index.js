@@ -18,6 +18,7 @@ const PelnaSzerokosc = ({ slice }) => {
           alt=''
           layout='fill'
           quality={85}
+          priority
         />
       )}
       <StyledHeader>
@@ -26,7 +27,7 @@ const PelnaSzerokosc = ({ slice }) => {
           <PrismicRichText field={slice.primary.description} />
         </StyledBoundedHeader>
       </StyledHeader>
-
+      {/* //TODO FIX BREAKPOINTS */}
       <StyledBoundedBody>
         <StyledBody>
           {slice.items.map((item) => (

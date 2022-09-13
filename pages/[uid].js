@@ -18,7 +18,6 @@ const Page = ({ page, menu }) => {
         <StyledTexts>
           <StyledTitle field={page.data.title} />
           <StyledDescirption field={page.data.description} />
-          {/* <StyledLine /> */}
         </StyledTexts>
       </StyledBounded>
       <StyledDynamicBounded>
@@ -35,10 +34,12 @@ export const getStaticProps = async ({ params, previewData }) => {
 
   const page = await client.getByUID('page', params.uid);
   const menu = await client.getSingle('menu', 'menu');
+
   return {
     props: {
       page,
       menu,
+
       // fallback: false,
     },
   };
@@ -123,12 +124,9 @@ const StyledTexts = styled.div`
   grid-area: texts;
   place-content: center;
   gap: 2rem;
-  border-bottom: 1px solid black;
-  margin-bottom: 3rem;
 
   @media only screen and (max-width: 640px) {
     margin: 0 5%;
-    margin-bottom: 50px;
   }
   @media only screen and (min-width: 640px) {
     p {
@@ -155,14 +153,4 @@ const StyledTitle = styled(PrismicRichText)`
 
 const StyledDescirption = styled(PrismicRichText)`
   grid-area: descritpion;
-`;
-const StyledLine = styled.div`
-  position: absolute;
-  right: 0;
-  width: 100%;
-  border-top: 1px solid black;
-  bottom: -30px;
-  @media only screen and (min-width: 640px) {
-    bottom: 70px;
-  }
 `;

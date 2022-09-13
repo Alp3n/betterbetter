@@ -41,20 +41,39 @@
       "homeLink": {
         "type": "Link",
         "config": {
-          "label": "Home Link",
-          "placeholder": "",
+          "label": "Link do strony głównej",
+          "placeholder": "Wybierz link do strony głównej",
+          "allowTargetBlank": false,
           "select": null
+        }
+      },
+      "eventsLink": {
+        "type": "Link",
+        "config": {
+          "label": "Link do wydarzeń",
+          "placeholder": "Wybierz link do wydarzeń",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "eventsLabel": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Etykieta linku wydarzeń",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph"
         }
       },
       "socialLinks": {
         "type": "Group",
         "config": {
-          "label": "Social Links",
+          "label": "Linki socialmedia",
           "fields": {
             "label": {
               "type": "Text",
               "config": {
-                "label": "Label",
+                "label": "Nazwa",
                 "placeholder": "Etykieta social media..."
               }
             },
@@ -63,13 +82,14 @@
               "config": {
                 "label": "Link",
                 "placeholder": "Dodaj link do socialmedia",
+                "allowTargetBlank": false,
                 "select": null
               }
             },
             "icon": {
               "type": "Image",
               "config": {
-                "label": "Icon",
+                "label": "Ikona",
                 "constraint": {
                   "width": 27,
                   "height": 27

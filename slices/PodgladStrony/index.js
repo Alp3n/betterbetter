@@ -46,7 +46,7 @@ const PodgladStrony = ({ slice, context }) => {
                 })}
                 alt=''
                 layout='fill'
-                quality={85}
+                quality={100}
               />
             </SmallImage>
             <BigImage>
@@ -57,7 +57,7 @@ const PodgladStrony = ({ slice, context }) => {
                 })}
                 alt=''
                 layout='fill'
-                quality={85}
+                quality={100}
               />
             </BigImage>
             <Number variation={slice.primary.number}>
@@ -142,7 +142,8 @@ const Grid = styled.div`
       variation === 1
         ? `grid-template-areas: 
         'imagesSide descriptionSide' 
-        'imagesSide brandsList';`
+        'imagesSide descriptionSide'
+        'brandsList brandsList';`
         : null}
   }
 `;
@@ -188,8 +189,8 @@ const ImagesSide = styled.div`
     ${({ variation }) =>
       variation === 2
         ? `
-        grid-template-columns: 200px 150px 150px;
-      grid-template-rows: 75px 200px 200px; 
+    grid-template-columns: 200px 150px 150px;
+    grid-template-rows: 75px 200px 200px; 
     grid-template-areas: 
     'number bigImage bigImage'
     'number bigImage bigImage'
@@ -202,6 +203,7 @@ const ImagesSide = styled.div`
         : null}
     overflow-x: unset;
   }
+  //TODO FIX THIS SHIT
   @media only screen and (min-width: 1102px) {
     grid-template-columns: repeat(2, 300px);
     grid-template-rows: repeat(2, 300px);
@@ -294,9 +296,15 @@ const BrandsList = styled.div`
   grid-area: brandsList;
   @media only screen and (min-width: 640px) {
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-flow: row;
-    gap: 1rem 2rem;
-    align-items: stretch;
+    /* grid-auto-flow: row; */
+    /* gap: 2rem 3rem; */
+    /* align-items: stretch; */
+  }
+  @media only screen and (min-width: 1102px) {
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-auto-flow: row; */
+    gap: 2rem 10rem;
+    /* align-items: stretch; */
   }
 `;
 

@@ -51,8 +51,27 @@
             },
             "galeria_zdjec": {
               "type": "SharedSlice"
+            },
+            "galeria_wydarzen": {
+              "type": "SharedSlice"
             }
           }
+        }
+      }
+    },
+    "SEO": {
+      "metaTitle": {
+        "type": "Text",
+        "config": {
+          "label": "Tytuł dla wyszukiwarek",
+          "placeholder": ""
+        }
+      },
+      "metaDescription": {
+        "type": "Text",
+        "config": {
+          "label": "Opis dla wyszukiwarek",
+          "placeholder": ""
         }
       }
     }

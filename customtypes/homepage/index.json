@@ -34,14 +34,14 @@
       "metaTitle": {
         "type": "Text",
         "config": {
-          "label": "Meta Title",
+          "label": "Tytuł dla wyszukiwarek",
           "placeholder": ""
         }
       },
       "metaDescription": {
         "type": "Text",
         "config": {
-          "label": "Meta Description",
+          "label": "Opis dla wyszukiwarek",
           "placeholder": ""
         }
       }

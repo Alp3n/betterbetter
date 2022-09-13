@@ -2,6 +2,7 @@
 
 import Brand from './Brand';
 import GaleriaBrandow from './GaleriaBrandow';
+import GaleriaWydarzen from './GaleriaWydarzen';
 import GaleriaZdjec from './GaleriaZdjec';
 import PelnaSzerokosc from './PelnaSzerokosc';
 import PodgladStrony from './PodgladStrony';
@@ -10,6 +11,7 @@ import SekcjaTekst from './SekcjaTekst';
 export {
 	Brand,
 	GaleriaBrandow,
+	GaleriaWydarzen,
 	GaleriaZdjec,
 	PelnaSzerokosc,
 	PodgladStrony,
@@ -19,6 +21,7 @@ export {
 export const components = {
 	brand: Brand,
 	galeria_brandow: GaleriaBrandow,
+	galeria_wydarzen: GaleriaWydarzen,
 	galeria_zdjec: GaleriaZdjec,
 	pelna_szerokosc: PelnaSzerokosc,
 	podglad_strony: PodgladStrony,

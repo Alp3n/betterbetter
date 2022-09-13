@@ -13,14 +13,15 @@ const GaleriaBrandow = ({ slice }) => {
         <StyledSlider>
           <Swiper
             modules={[Autoplay]}
-            spaceBetween={50}
-            slidesPerView={6}
-            slidesPerGroup={3}
-            loop={true}
+            spaceBetween={100}
+            slidesPerView='auto'
+            slidesPerGroup={4}
+            // loop={true}
             speed={1000}
             lazy
             watchSlidesProgress
             autoplay={{ delay: 2500, disableOnInteraction: false }}
+            //TODO Check this shit breakpoints
             breakpoints={{
               // when window width is >= 320px
               320: {
@@ -47,7 +48,7 @@ const GaleriaBrandow = ({ slice }) => {
                 spaceBetween: 40,
               },
               1512: {
-                slidesPerView: 6,
+                slidesPerView: 5,
                 slidesPerGroup: 3,
                 spaceBetween: 40,
               },
