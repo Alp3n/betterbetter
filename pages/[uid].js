@@ -6,12 +6,17 @@ import { components } from '../slices';
 import Layout from '../components/layout';
 import Bounded from '../components/bounded';
 import Image from '../components/image';
+import SEO from '../components/SEO';
 
 const Page = ({ page, menu }) => {
   const heroImage = `${page.data.imageMain.url}?dpr=2`;
   console.log(page);
   return (
     <Layout menu={menu}>
+      <SEO
+        metaDescription={page.data.metaDescription}
+        metaTitle={page.data.metaTitle}
+      />
       {page.uid === 'wydarzenia' ? null : (
         <StyledBounded>
           <StyledImage>
