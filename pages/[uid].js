@@ -9,17 +9,21 @@ import Image from '../components/image';
 
 const Page = ({ page, menu }) => {
   const heroImage = `${page.data.imageMain.url}?dpr=2`;
+  console.log(page);
   return (
     <Layout menu={menu}>
-      <StyledBounded>
-        <StyledImage>
-          <Image src={heroImage} alt='' layout='fill' quality={100} />
-        </StyledImage>
-        <StyledTexts>
-          <StyledTitle field={page.data.title} />
-          <StyledDescirption field={page.data.description} />
-        </StyledTexts>
-      </StyledBounded>
+      {page.uid === 'wydarzenia' ? null : (
+        <StyledBounded>
+          <StyledImage>
+            <Image src={heroImage} alt='' layout='fill' quality={100} />
+          </StyledImage>
+          <StyledTexts>
+            <StyledTitle field={page.data.title} />
+            <StyledDescirption field={page.data.description} />
+          </StyledTexts>
+        </StyledBounded>
+      )}
+
       <StyledDynamicBounded>
         <SliceZone slices={page.data.slices} components={components} />
       </StyledDynamicBounded>
@@ -131,7 +135,7 @@ const StyledTexts = styled.div`
   @media only screen and (min-width: 640px) {
     p {
       font-weight: 400;
-      font-size: 20px;
+      /* font-size: 20px; */
       line-height: 2;
     }
   }
@@ -139,7 +143,7 @@ const StyledTexts = styled.div`
     gap: 4rem;
     p {
       font-weight: 400;
-      font-size: 28px;
+      /* font-size: 28px; */
       line-height: 2;
     }
   }

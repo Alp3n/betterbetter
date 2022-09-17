@@ -5,8 +5,8 @@ import styled from '@emotion/styled';
 import Bounded from '../../components/bounded';
 import Button from '../../components/button';
 import Image from '../../components/image';
-import Modal from '../../components/modal';
-import PortalModal from '../../components/portalModal';
+import ModalBrand from '../../components/modal-brand';
+import ModalPortal from '../../components/modal-portal';
 
 const PodgladStrony = ({ slice, context }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -92,14 +92,14 @@ const PodgladStrony = ({ slice, context }) => {
         </Grid>
       </Bounded>
       {slice.variation === 'withBrands' ? (
-        <PortalModal open={modalIsOpen} onClose={() => setModalIsOpen(false)}>
-          <Modal
+        <ModalPortal open={modalIsOpen} onClose={() => setModalIsOpen(false)}>
+          <ModalBrand
             setIsOpen={setModalIsOpen}
             item={selectedItem}
             nextItem={nextItem}
             previouseItem={previouseItem}
           />
-        </PortalModal>
+        </ModalPortal>
       ) : null}
     </>
   );
@@ -126,8 +126,9 @@ const Grid = styled.div`
 
     ${({ variation }) =>
       variation === 2
-        ? `grid-template-columns: auto 1fr;
-        grid-template-areas: 'descriptionSide imagesSide';`
+        ? ` grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'descriptionSide imagesSide';
+        place-items: start end;`
         : null}
 
     ${({ variation }) =>
@@ -150,8 +151,8 @@ const Grid = styled.div`
 const ImagesSide = styled.div`
   position: relative;
   display: grid;
-  grid-template-columns: repeat(2, 200px);
-  grid-template-rows: repeat(2, 200px);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 45vw);
   gap: 1rem;
   ${({ variation }) =>
     variation === 1
@@ -161,8 +162,6 @@ const ImagesSide = styled.div`
   ${({ variation }) =>
     variation === 2
       ? `
-      grid-template-columns: 250px 200px;
-      grid-template-rows: 150px 200px;  
       grid-template-areas: 
         'bigImage .'
         'bigImage smallImage';`
@@ -170,8 +169,8 @@ const ImagesSide = styled.div`
   ${({ variation }) =>
     variation === 3
       ? `grid-template-areas: 
-          'bigImage .'
-          'bigImage smallImage';`
+          'bigImage smallImage'
+          'bigImage .';`
       : null}
   grid-area: imagesSide;
   overflow-x: scroll;
@@ -189,12 +188,10 @@ const ImagesSide = styled.div`
     ${({ variation }) =>
       variation === 2
         ? `
-    grid-template-columns: 200px 150px 150px;
-    grid-template-rows: 75px 200px 200px; 
+ 
     grid-template-areas: 
-    'number bigImage bigImage'
-    'number bigImage bigImage'
-    'smallImage bigImage bigImage';`
+    'number bigImage'
+    'smallImage bigImage';`
         : null}
   ${({ variation }) =>
       variation === 3
@@ -215,17 +212,14 @@ const ImagesSide = styled.div`
     ${({ variation }) =>
       variation === 2
         ? `
-      grid-template-columns: 300px 300px 300px;
-      grid-template-rows: 150px 300px 300px;  
     grid-template-areas: 
-    'number bigImage bigImage'
-    'number bigImage bigImage'
-    'smallImage bigImage bigImage';`
+    'number bigImage'
+    'smallImage bigImage';`
         : null}
   ${({ variation }) =>
       variation === 3
         ? `grid-template-areas: 'bigImage number'
-    'bigImage smallImage ';`
+    'bigImage smallImage';`
         : null}
     overflow-x: unset;
   }
@@ -280,12 +274,7 @@ const Number = styled.p`
     grid-area: number;
     place-self: end end;
     ${({ variation }) =>
-      variation === 3 ? `place-self: start start;` : null}/* ${({
-      variation,
-    }) =>
-      variation === 2
-        ? `position: absolute; right: 3rem; bottom: 2rem; grid-area: unset;`
-        : null} */
+      variation === 3 ? `place-self: start start; line-height:10rem;` : null}
   }
 `;
 
@@ -294,17 +283,18 @@ const BrandsList = styled.div`
   grid-template-columns: 1fr;
   gap: 18px;
   grid-area: brandsList;
+  margin-top: 3rem;
   @media only screen and (min-width: 640px) {
-    grid-template-columns: repeat(3, 1fr);
-    /* grid-auto-flow: row; */
-    /* gap: 2rem 3rem; */
-    /* align-items: stretch; */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 3rem;
   }
   @media only screen and (min-width: 1102px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 9rem;
+  }
+  @media only screen and (min-width: 1541px) {
     grid-template-columns: repeat(4, 1fr);
-    /* grid-auto-flow: row; */
-    gap: 2rem 10rem;
-    /* align-items: stretch; */
+    gap: 2rem 9rem;
   }
 `;
 
@@ -315,25 +305,23 @@ const BrandItem = styled.div`
   height: 34px;
   width: 100%;
   padding-left: 8px;
-  background: linear-gradient(to left, transparent 50%, #3d3d3d 50%) right;
+  background: linear-gradient(to left, transparent 50%, #000 50%) right;
   background-size: 200%;
-  transition: 0.5s ease-out;
+  /* transition: 0.5s ease-out; */
   color: black;
-  > p {
-    font-size: 15px;
-  }
 
-  &:hover {
-    color: white;
-    background-position: left;
-    cursor: pointer;
+  @media only screen and (min-width: 640px) {
+    transition: 0.5s ease-out;
+    &:hover {
+      color: white;
+      background-position: left;
+      cursor: pointer;
+    }
+    &:not(:hover) {
+      transition: 0.3s ease-in 0.2s;
+      background-position: right;
+    }
   }
-
-  &:not(:hover) {
-    transition: 0.3s ease-in 0.2s;
-    background-position: right;
-  }
-
   @media only screen and (max-width: 1540px) {
     height: auto;
   }
@@ -349,24 +337,12 @@ const BrandArrow = styled.div`
   font-weight: 900;
   font-size: 1.8rem;
   background-color: #000;
-  background: linear-gradient(to left, black 50%, #3d3d3d 50%) right;
-  background-size: 200%;
-  transition: 0.3s ease-in;
-  &:hover {
-    transition: 0.3s ease-in 0.2s;
-    background-position: left;
-  }
-
-  &:not(:hover) {
-    transition: 0.3s ease-in 0;
-    background-position: right;
-  }
 `;
 
 const StyledDescirption = styled.div`
   @media screen and (min-width: 640px) {
-    ${({ variation }) => (variation === 1 ? `width: 26ch;` : null)}
-    ${({ variation }) => (variation === 2 ? `width: 26ch;` : null)}
-    ${({ variation }) => (variation === 3 ? `width: 30ch;` : null)}
+    ${({ variation }) => (variation === 1 ? `max-width: 30ch;` : null)}
+    ${({ variation }) => (variation === 2 ? `max-width: 30ch;` : null)}
+    ${({ variation }) => (variation === 3 ? `max-width: 30ch;` : null)}
   }
 `;

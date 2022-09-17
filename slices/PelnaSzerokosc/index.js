@@ -170,18 +170,27 @@ const StyledItem = styled.a`
 
   @media only screen and (min-width: 640px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 10rem 10rem;
+    grid-template-rows: 7rem 10rem;
     align-items: baseline;
     > h2 {
-      font-size: 2rem;
+      font-size: 1.9rem;
     }
 
     > p {
       font-family: 'Heebo';
       margin-left: none;
-      font-size: 13rem;
+      font-size: 10rem;
       font-weight: 900;
       display: inline-block;
+    }
+  }
+  @media only screen and (min-width: 1102px) {
+    > h2 {
+      font-size: 2rem;
+    }
+
+    > p {
+      font-size: 13rem;
     }
   }
 `;

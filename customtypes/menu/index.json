@@ -108,10 +108,18 @@
             "item": {
               "type": "StructuredText",
               "config": {
-                "label": "Item",
+                "label": "Przedmiot",
                 "placeholder": "Przedmiot stopki... np. email, tele",
                 "allowTargetBlank": true,
                 "single": "paragraph"
+              }
+            },
+            "itemLink": {
+              "type": "Link",
+              "config": {
+                "label": "Link do przedmiotu",
+                "placeholder": "",
+                "select": null
               }
             }
           }

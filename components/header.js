@@ -130,7 +130,7 @@ const StyledLink = styled(PrismicLink)`
   font-weight: bold;
   position: relative;
   display: inline-block;
-  ${({ myarea }) => (myarea ? `grid-area: ${myarea}` : null)}
+  ${({ myarea }) => (myarea ? `grid-area: ${myarea};` : null)}
   p {
     font-family: 'Gotham Black';
   }
@@ -300,7 +300,7 @@ const StyledMenu = styled.nav`
   z-index: 1;
 
   &.initial {
-    top: -300px;
+    top: -600px;
   }
   &.open {
     animation: slideDown 0.3s ease-in-out forwards;
@@ -311,7 +311,7 @@ const StyledMenu = styled.nav`
 
   @keyframes slideDown {
     0% {
-      top: 0;
+      top: -40%;
       left: 0;
     }
     100% {
@@ -331,6 +331,7 @@ const StyledMenu = styled.nav`
   }
 
   @media only screen and (min-width: 1102px) {
+    display: none;
   }
 `;
 

@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import 'wicg-inert';
 import Portal from './portal';
 
-const PortalModal = ({ open, onClose, locked, children }) => {
+const ModalPortal = ({ open, onClose, locked, children }) => {
   const [active, setActive] = React.useState(false);
   const backdrop = React.useRef(null);
 
@@ -56,7 +56,7 @@ const PortalModal = ({ open, onClose, locked, children }) => {
   );
 };
 
-export default PortalModal;
+export default ModalPortal;
 
 const Backdrop = styled.div`
   position: fixed;
@@ -66,13 +66,13 @@ const Backdrop = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(51, 51, 51, 0.3);
-  backdrop-filter: blur(1px);
   opacity: 0;
   transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 200ms;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 3;
 
   @media only screen and (max-width: 1102px) {
     bottom: 0;
@@ -81,10 +81,11 @@ const Backdrop = styled.div`
     transform: none;
     align-items: end;
   }
-  & .modal-content {
+  &.modal-content {
     transform: translateY(100px);
     transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 0;
+    backdrop-filter: unset;
   }
 
   &.active {
@@ -92,7 +93,7 @@ const Backdrop = styled.div`
     transition-delay: 0ms;
     opacity: 1;
 
-    & .modal-content {
+    &.modal-content {
       transform: translateY(0);
       opacity: 1;
       transition-delay: 150ms;
@@ -105,17 +106,12 @@ const Content = styled.div`
   position: relative;
   box-sizing: border-box;
   min-height: 50px;
-  max-height: 95%;
-  width: 100%;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  background-color: white;
+  max-height: 100%;
+  /* min-width: 70%; */
   overflow-y: auto;
-  padding: 5%;
-  @media only screen and (min-width: 1102px) {
-    padding: 50px;
-    min-height: 90%;
-    min-width: 80%;
-    max-height: 90%;
+
+  @media only screen and (min-width: 1180px) {
     max-width: 90%;
+    /* max-height: 90%; */
   }
 `;

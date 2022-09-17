@@ -16,26 +16,17 @@ const GaleriaBrandow = ({ slice }) => {
             spaceBetween={100}
             slidesPerView='auto'
             slidesPerGroup={4}
-            // loop={true}
             speed={1000}
-            lazy
             watchSlidesProgress
             autoplay={{ delay: 2500, disableOnInteraction: false }}
             //TODO Check this shit breakpoints
             breakpoints={{
               // when window width is >= 320px
               320: {
-                slidesPerView: 2,
+                slidesPerView: 3,
                 slidesPerGroup: 1,
                 spaceBetween: 10,
                 // centeredSlides: true,
-              },
-
-              // when window width is >= 640px
-              640: {
-                slidesPerView: 3,
-                slidesPerGroup: 1,
-                spaceBetween: 20,
               },
               1024: {
                 slidesPerView: 4,

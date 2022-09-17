@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { PrismicRichText } from '@prismicio/react';
+import { PrismicLink, PrismicRichText } from '@prismicio/react';
 import Bounded from './bounded';
 import Image from './image';
 // import { VscMenu, VscClose } from 'react-icons/vsc';
@@ -14,7 +14,9 @@ const Footer = ({ footer }) => {
       </StyledBlackBar>
       <StyledBounded>
         {footer.footer.map((item, i) => (
-          <PrismicRichText key={i} field={item.item} />
+          <PrismicLink key={i} field={item.itemLink} target='_blank'>
+            <PrismicRichText field={item.item} />
+          </PrismicLink>
         ))}
       </StyledBounded>
     </StyledFooter>
@@ -23,13 +25,16 @@ const Footer = ({ footer }) => {
 
 export default Footer;
 
-const StyledFooter = styled.footer``;
+const StyledFooter = styled.footer`
+  background-color: #000;
+  color: #fff;
+`;
 const StyledBlackBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000;
-  height: 200px;
+
+  height: 150px;
   width: 100%;
   color: white;
 `;

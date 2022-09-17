@@ -37,8 +37,9 @@ const GaleriaWydarzen = ({ slice }) => {
           )}
           {item?.eventDate && item?.eventTime ? (
             <StyledDateAndTime>
+              <span>Godzina&nbsp;</span>
               <PrismicRichText field={item.eventTime} />
-              <p>{dateTransform(item.eventDate)}</p>
+              <span>&nbsp;dnia {dateTransform(item.eventDate)}</span>
             </StyledDateAndTime>
           ) : (
             <p>Tu powinna być czas i data, sprawdź w CMS!</p>
@@ -58,14 +59,19 @@ export default GaleriaWydarzen;
 const StyledWrapper = styled.div`
   display: grid;
   grid-column: 1 / -1;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+  margin: 0 0 4rem 0;
+  gap: 3rem;
+  @media only screen and (min-width: 1102px) {
+    margin: 3rem 0 5rem 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 const StyledItem = styled(PrismicLink)`
   display: grid;
   grid-template-columns: 1;
   grid-template-rows: auto;
   gap: 1.5rem;
-  grid-column: 1 / -1;
   padding: 1rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid black;
@@ -74,10 +80,6 @@ const StyledItem = styled(PrismicLink)`
     background-color: black;
     color: white;
     cursor: pointer;
-  }
-  @media only screen and (min-width: 1102px) {
-    ${({ order }) =>
-      (order + 1) % 2 === 0 ? 'grid-column: 1' : 'grid-column: 2'};
   }
 `;
 
@@ -89,6 +91,6 @@ const StyledHeading = styled.span`
 
 const StyledDateAndTime = styled.div`
   display: flex;
-  gap: 2rem;
+  /* gap: 2rem; */
   align-items: center;
 `;

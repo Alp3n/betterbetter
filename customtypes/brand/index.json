@@ -21,6 +21,22 @@
           "single": "paragraph"
         }
       },
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo brandu",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "Zdjęcie",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "description": {
         "type": "StructuredText",
         "config": {
@@ -28,14 +44,6 @@
           "placeholder": "Wstaw opis brandu",
           "allowTargetBlank": true,
           "multi": "paragraph"
-        }
-      },
-      "image": {
-        "type": "Image",
-        "config": {
-          "label": "Zdjęcie brandu",
-          "constraint": {},
-          "thumbnails": []
         }
       },
       "contacts": {
@@ -80,6 +88,40 @@
           "placeholder": "Wstaw URL do strony...",
           "allowTargetBlank": false,
           "select": null
+        }
+      },
+      "youtube": {
+        "type": "Link",
+        "config": {
+          "label": "Link do YouTube",
+          "placeholder": "Proszę dodać link do wideo lub playlisty YouTube lub zostawić puste...",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "partners": {
+        "type": "Group",
+        "config": {
+          "label": "Partnerzy brandu",
+          "fields": {
+            "logo": {
+              "type": "Image",
+              "config": {
+                "label": "Logo partnera",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "url": {
+              "type": "Link",
+              "config": {
+                "label": "Link do strony partnera",
+                "placeholder": "Dodaj link do strony partnera",
+                "allowTargetBlank": false,
+                "select": null
+              }
+            }
+          }
         }
       },
       "slices": {
