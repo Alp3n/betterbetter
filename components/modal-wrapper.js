@@ -97,16 +97,20 @@ const ModalBody = styled.div`
   padding: 5%;
   height: 100%;
 
-  @media only screen and (max-width: 1180px) {
-    min-width: 100%;
-  }
-
   @media only screen and (min-width: 1102px) {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     border: 1px solid #707070;
     padding: 5% 5% 1% 5%;
     max-height: 80vh;
     /* min-width: 70vw; */
+  }
+
+  @media only screen and (max-width: 1180px) {
+    min-width: 100%;
+  }
+
+  @media only screen and (max-height: 1080px) {
+    max-height: 100vh;
   }
 `;
 

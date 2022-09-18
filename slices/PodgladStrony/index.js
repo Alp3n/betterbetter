@@ -29,6 +29,8 @@ const PodgladStrony = ({ slice, context }) => {
     setSelectedItem(context[currentItem - 1]);
   };
 
+  const sortItems = (a, b) => a.data.position - b.data.position;
+
   return (
     <>
       <Bounded
@@ -78,7 +80,7 @@ const PodgladStrony = ({ slice, context }) => {
           {slice.variation === 'withBrands' ? (
             <BrandsList>
               {prismicH.isFilled.group(context)
-                ? context.map((item) => (
+                ? context.sort(sortItems).map((item) => (
                     <React.Fragment key={item.uid}>
                       <BrandItem onClick={() => openModal(item)}>
                         <PrismicRichText field={item.data.name} />

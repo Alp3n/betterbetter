@@ -21,6 +21,13 @@
           "single": "paragraph"
         }
       },
+      "position": {
+        "type": "Number",
+        "config": {
+          "label": "Pozycja w galerii",
+          "placeholder": ""
+        }
+      },
       "logo": {
         "type": "Image",
         "config": {
