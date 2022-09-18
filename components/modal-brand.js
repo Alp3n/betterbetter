@@ -5,6 +5,8 @@ import styled from '@emotion/styled';
 import Image from './image';
 import ModalWrapper from './modal-wrapper';
 import Youtube from '../public/static/svg/youtube.svg';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper';
 
 const ModalBrand = ({ setIsOpen, item, nextItem, previouseItem }) => {
   if (!item) return null;
@@ -17,15 +19,40 @@ const ModalBrand = ({ setIsOpen, item, nextItem, previouseItem }) => {
       setIsOpen={setIsOpen}
     >
       <ModalBody>
-        <StyledImage>
-          <Image
-            src={item.data.image.url}
-            alt={item.data.image.alt}
-            layout='responsive'
-            width={item.data.image.dimensions.width}
-            height={item.data.image.dimensions.height}
-          />
-        </StyledImage>
+        {prismicH.isFilled.group(item.data.photoGallery) ? (
+          <StyledGallery
+            modules={[Autoplay]}
+            slidesPerView='1'
+            slidesPerGroup={1}
+            speed={1000}
+            watchSlidesProgress
+            autoplay={{ delay: 3000, disableOnInteraction: true }}
+          >
+            {item.data.photoGallery.map((item, i) => (
+              <SwiperSlide key={i}>
+                <Image
+                  src={item.photo.url}
+                  alt={item.photo.alt}
+                  layout='responsive'
+                  width={item.photo.dimensions.width}
+                  height={item.photo.dimensions.height}
+                  quality={100}
+                />
+              </SwiperSlide>
+            ))}
+          </StyledGallery>
+        ) : (
+          <StyledImage>
+            <Image
+              src={item.data.image.url}
+              alt={item.data.image.alt}
+              layout='responsive'
+              width={item.data.image.dimensions.width}
+              height={item.data.image.dimensions.height}
+            />
+          </StyledImage>
+        )}
+
         <StyledTitle>
           {/* <Image
             src={item.data.logo.url}
@@ -177,12 +204,11 @@ const StyledImage = styled.div`
 
   @media only screen and (min-width: 1102px) {
     height: 100%;
-    grid-template-columns: 1fr 1fr;
   }
 `;
 const StyledContacts = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, 200px);
   grid-area: contacts;
   gap: 2rem;
   @media only screen and (min-width: 1102px) {
@@ -242,13 +268,20 @@ const StyledURL = styled.div`
 const StyledPartnersWrapper = styled.div`
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, 150px);
-  grid-auto-columns: 150px;
-  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fit, 140px);
   grid-area: partners;
 `;
 
 const StyledPartner = styled(PrismicLink)`
-  width: 150px;
+  width: 140px;
   place-self: start;
+`;
+
+const StyledGallery = styled(Swiper)`
+  grid-area: image;
+  /* max-height: 300px; */
+  /* max-height: 300px; */
+  /* height: 100%; */
+  width: 100%;
+  /* object-fit: ; */
 `;

@@ -29,6 +29,22 @@
           "thumbnails": []
         }
       },
+      "photoGallery": {
+        "type": "Group",
+        "config": {
+          "label": "Galeria zdjęć",
+          "fields": {
+            "photo": {
+              "type": "Image",
+              "config": {
+                "label": "Zdjęcie",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
       "image": {
         "type": "Image",
         "config": {
