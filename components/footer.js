@@ -19,6 +19,22 @@ const Footer = ({ footer }) => {
           </PrismicLink>
         ))}
       </StyledBounded>
+      <StyledCredentials>
+        <PrismicLink
+          href={'https://ilovegrid.com'}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <p>Designed by ilovegrid,</p>
+        </PrismicLink>
+        <PrismicLink
+          href={'https://relyit.pl'}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <p>&nbsp;made by relyit</p>
+        </PrismicLink>
+      </StyledCredentials>
     </StyledFooter>
   );
 };
@@ -26,14 +42,13 @@ const Footer = ({ footer }) => {
 export default Footer;
 
 const StyledFooter = styled.footer`
-  background-color: #000;
   color: #fff;
 `;
 const StyledBlackBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
+  background-color: #000;
   height: 150px;
   width: 100%;
   color: white;
@@ -48,6 +63,7 @@ const StyledLogo = styled.div`
 
 const StyledBounded = styled(Bounded)`
   padding: 50px;
+  background-color: #000;
   div {
     display: grid;
     place-content: center;
@@ -64,5 +80,18 @@ const StyledBounded = styled(Bounded)`
       place-content: center;
       width: auto;
     }
+  }
+`;
+
+const StyledCredentials = styled.div`
+  display: flex;
+  color: black;
+  place-content: center;
+  padding: 0 2rem;
+  p {
+    font-size: smaller;
+  }
+  @media only screen and (min-width: 640px) {
+    place-content: end;
   }
 `;
