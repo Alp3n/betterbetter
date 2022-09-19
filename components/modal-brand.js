@@ -6,7 +6,7 @@ import Image from './image';
 import ModalWrapper from './modal-wrapper';
 import Youtube from '../public/static/svg/youtube.svg';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper';
+import { Autoplay, Zoom } from 'swiper';
 
 const ModalBrand = ({ setIsOpen, item, nextItem, previouseItem }) => {
   if (!item) return null;
@@ -66,15 +66,12 @@ const ModalBrand = ({ setIsOpen, item, nextItem, previouseItem }) => {
         </StyledTitle>
         <StyledDescription field={item.data.description} />
 
-        {prismicH.isFilled.group(item.data.partners) ? (
+        {prismicH.isFilled.group(item.data.partners) &&
+        item.data.partners[0].logo.dimensions ? (
           <StyledPartnersWrapper>
-            {/* <StyledURL>
-              <StyledBlackBox />
-              <p>Partnerzy</p>
-            </StyledURL> */}
             {item.data.partners.map((partner, i) => (
               <StyledPartner key={i} field={partner.url}>
-                <Image
+                <StyledPartnerImage
                   src={partner.logo.url}
                   alt={partner.logo.alt}
                   layout='responsive'
@@ -88,8 +85,8 @@ const ModalBrand = ({ setIsOpen, item, nextItem, previouseItem }) => {
         ) : null}
         {prismicH.isFilled.group(item.data.contacts) ? (
           <StyledContacts>
-            {item.data.contacts.map((contact) => (
-              <StyledContact key={contact.name}>
+            {item.data.contacts.map((contact, i) => (
+              <StyledContact key={i}>
                 <StyledContactHeader>
                   <StyledBlackBox />
                   <StyledContactName field={contact.name} />
@@ -147,7 +144,9 @@ const ModalBody = styled.div`
     'url';
   gap: 2rem;
   grid-area: body;
-  padding-bottom: 5rem;
+  padding-bottom: 1rem;
+  align-content: start;
+
   @media only screen and (min-width: 1102px) {
     position: relative;
     grid-template-columns: 1fr 1fr;
@@ -156,7 +155,7 @@ const ModalBody = styled.div`
       'description image'
       'contacts partners'
       'url partners';
-    gap: 3rem 6rem;
+    gap: 1.5rem 3rem;
   }
 `;
 
@@ -268,12 +267,12 @@ const StyledURL = styled.div`
 const StyledPartnersWrapper = styled.div`
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, 140px);
+  grid-template-columns: repeat(auto-fit, 100px);
   grid-area: partners;
 `;
 
 const StyledPartner = styled(PrismicLink)`
-  width: 140px;
+  width: 100px;
   place-self: start;
 `;
 
@@ -284,4 +283,10 @@ const StyledGallery = styled(Swiper)`
   /* height: 100%; */
   width: 100%;
   /* object-fit: ; */
+`;
+
+const StyledPartnerImage = styled(Image)`
+  :hover {
+    filter: invert(100%);
+  }
 `;

@@ -5,11 +5,22 @@ import { PrismicRichText, PrismicLink } from '@prismicio/react';
 import Image from '../../components/image';
 
 const GaleriaWydarzen = ({ slice }) => {
+  // YYYY-MM-DD to DD.MM.YYYY
   const dateTransform = (date) => date.split('-').reverse().join('.');
+
+  const createDateObject = (date) => {
+    let dateParts = date.split('-').reverse();
+    let dateObject = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]);
+    return dateObject;
+  };
+
+  const sortItems = (a, b) =>
+    createDateObject(b.eventDate) - createDateObject(a.eventDate);
+
   return (
     <StyledWrapper>
-      {slice?.items?.map((item, i) => (
-        <StyledItem key={i} order={i} field={item.eventLink} target='_blank'>
+      {slice?.items?.sort(sortItems).map((item, i) => (
+        <StyledItem key={i} field={item.eventLink} target='_blank'>
           {prismicH.isFilled.image(item.eventImage) && (
             <Image
               src={prismicH.asImageSrc(item.eventImage, {

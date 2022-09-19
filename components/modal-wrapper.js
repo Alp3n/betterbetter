@@ -84,9 +84,11 @@ const StyledModalWrapper = styled.div`
     grid-template-areas: 'body desktopCloseButton';
   }
   @media only screen and (min-width: 1240px) {
-    max-width: 1152px;
+    max-width: 100%;
+    min-height: 90%;
   }
   @media only screen and (min-width: 1540px) {
+    min-height: unset;
     max-width: 1352px;
   }
 `;
@@ -110,7 +112,7 @@ const ModalBody = styled.div`
   }
 
   @media only screen and (max-height: 1080px) {
-    max-height: 100vh;
+    max-height: 100%;
   }
 `;
 

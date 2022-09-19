@@ -28,14 +28,6 @@
           "placeholder": ""
         }
       },
-      "logo": {
-        "type": "Image",
-        "config": {
-          "label": "Logo brandu",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
       "photoGallery": {
         "type": "Group",
         "config": {
@@ -50,14 +42,6 @@
               }
             }
           }
-        }
-      },
-      "image": {
-        "type": "Image",
-        "config": {
-          "label": "Zdjęcie",
-          "constraint": {},
-          "thumbnails": []
         }
       },
       "description": {
