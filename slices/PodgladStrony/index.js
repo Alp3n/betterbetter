@@ -266,7 +266,7 @@ const BigImage = styled.div`
 const Number = styled.p`
   display: none;
   font-family: 'Heebo';
-  @media only screen and (min-width: 888px) {
+  @media only screen and (min-width: 1102px) {
     display: block;
     font-size: 12rem;
     font-weight: 700;

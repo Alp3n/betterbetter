@@ -122,7 +122,7 @@ const StyledBody = styled.div`
     animation: fadein 1s ease-out 1s forwards;
   }
 
-  @media only screen and (min-width: 640px) {
+  @media only screen and (min-width: 888px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5rem;
@@ -167,8 +167,11 @@ const StyledItem = styled.a`
       opacity: 1;
     }
   }
+  @media only screen and (min-width: 640px) and (max-width: 888px) {
+    margin-bottom: 2rem;
+  }
 
-  @media only screen and (min-width: 640px) {
+  @media only screen and (min-width: 888px) {
     grid-template-columns: 1fr;
     grid-template-rows: 7rem 10rem;
     align-items: baseline;
@@ -184,6 +187,7 @@ const StyledItem = styled.a`
       display: inline-block;
     }
   }
+
   @media only screen and (min-width: 1102px) {
     > h2 {
       font-size: 2rem;

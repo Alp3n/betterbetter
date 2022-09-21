@@ -67,6 +67,7 @@ export default GaleriaBrandow;
 const StyledBounded = styled(Bounded)`
   /* height: 200px; */
   margin-bottom: 6rem;
+  z-index: 0;
   @media screen and (min-width: 1102px) {
     margin-bottom: 250px;
   }

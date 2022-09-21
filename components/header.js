@@ -90,7 +90,7 @@ const StyledBounded = styled(Bounded)`
   width: 100%;
   background-color: white;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  z-index: 2;
+  z-index: 3;
   > div {
     position: relative;
     display: grid;
@@ -297,7 +297,7 @@ const StyledMenu = styled.nav`
   top: -1000px; */
   width: 100%;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  z-index: 1;
+  z-index: 2;
 
   &.initial {
     top: -600px;
