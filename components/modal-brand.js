@@ -144,7 +144,7 @@ const ModalBody = styled.div`
     'url';
   gap: 2rem;
   grid-area: body;
-  padding-bottom: 1rem;
+  padding-bottom: 5rem;
   align-content: start;
 
   @media only screen and (min-width: 1102px) {
@@ -156,6 +156,7 @@ const ModalBody = styled.div`
       'contacts partners'
       'url partners';
     gap: 1.5rem 3rem;
+    padding-bottom: 1rem;
   }
 `;
 
@@ -207,7 +208,7 @@ const StyledImage = styled.div`
 `;
 const StyledContacts = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
+  grid-template-columns: repeat(auto-fit, auto);
   grid-area: contacts;
   gap: 2rem;
   @media only screen and (min-width: 1102px) {
@@ -231,7 +232,7 @@ const StyledContact = styled.div`
   grid-template-columns: 30px 1fr;
   grid-template-areas:
     'header header'
-    'info info';
+    '. info';
 `;
 
 const StyledContactHeader = styled.div`

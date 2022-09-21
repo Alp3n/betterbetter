@@ -32,7 +32,7 @@ const Footer = ({ footer }) => {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <p>&nbsp;made by relyit</p>
+          <p>&nbsp;made by relyIT</p>
         </PrismicLink>
       </StyledCredentials>
     </StyledFooter>

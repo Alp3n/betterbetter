@@ -83,9 +83,12 @@ const StyledBounded = styled(Bounded)`
     > div {
       grid-template-columns: 1fr 1fr;
       grid-template-areas: 'image texts';
-      gap: 6rem;
-      margin-top: 5rem;
+      gap: 4rem;
+      margin-top: 4rem;
     }
+  }
+  @media only screen and (min-width: 1102px) {
+    gap: 6rem;
   }
 `;
 
@@ -101,7 +104,7 @@ const StyledDynamicBounded = styled(Bounded)`
     @media only screen and (min-width: 1102px) {
       margin-top: 1rem;
       grid-template-columns: 1fr 1fr;
-      gap: 6rem;
+      gap: 4rem;
       grid-template-areas: 'images texts';
     }
   }
@@ -110,13 +113,20 @@ const StyledDynamicBounded = styled(Bounded)`
 const StyledImage = styled.div`
   position: relative;
   width: 100%;
-  height: 60vh;
   grid-area: image;
 
   img {
     object-fit: cover;
   }
 
+  @media only screen and (max-width: 640px) {
+    height: 60vh;
+  }
+
+  @media only screen and (min-width: 641px) {
+    /* width: 600px; */
+    height: 400px;
+  }
   @media only screen and (min-width: 1102px) {
     /* width: 600px; */
     height: 600px;

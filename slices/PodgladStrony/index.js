@@ -117,7 +117,8 @@ const Grid = styled.div`
     'descriptionSide'
     'imagesSide'
     'brandsList';
-  @media only screen and (min-width: 640px) {
+
+  @media only screen and (min-width: 888px) {
     grid-template-columns: 1fr 1fr;
     ${({ variation }) =>
       variation === 1
@@ -145,7 +146,6 @@ const Grid = styled.div`
       variation === 1
         ? `grid-template-areas: 
         'imagesSide descriptionSide' 
-        'imagesSide descriptionSide'
         'brandsList brandsList';`
         : null}
   }
@@ -175,29 +175,28 @@ const ImagesSide = styled.div`
           'bigImage .';`
       : null}
   grid-area: imagesSide;
-  overflow-x: scroll;
   ${({ variation }) => (variation === 1 ? `margin-bottom: 2rem;` : null)}
 
-  @media only screen and (min-width: 640px) {
+  @media only screen and (min-width: 888px) {
     ${({ variation }) => (variation === 1 ? `margin-bottom: 0;` : null)}
     grid-template-columns: repeat(2, 200px);
     grid-template-rows: repeat(2, 200px);
     ${({ variation }) =>
       variation === 1
         ? `grid-template-areas: 'smallImage bigImage'
-    'number bigImage';`
+    '. bigImage';`
         : null}
     ${({ variation }) =>
       variation === 2
         ? `
  
     grid-template-areas: 
-    'number bigImage'
+    '. bigImage'
     'smallImage bigImage';`
         : null}
   ${({ variation }) =>
       variation === 3
-        ? `grid-template-areas: 'bigImage number'
+        ? `grid-template-areas: 'bigImage .'
     'bigImage smallImage ';`
         : null}
     overflow-x: unset;
@@ -237,7 +236,7 @@ const DescriptionSide = styled.div`
   gap: 2rem;
   grid-area: descriptionSide;
 
-  @media only screen and (min-width: 640px) {
+  @media only screen and (min-width: 888px) {
     gap: 3rem;
   }
 `;
@@ -267,7 +266,7 @@ const BigImage = styled.div`
 const Number = styled.p`
   display: none;
   font-family: 'Heebo';
-  @media only screen and (min-width: 640px) {
+  @media only screen and (min-width: 888px) {
     display: block;
     font-size: 12rem;
     font-weight: 700;
@@ -286,7 +285,7 @@ const BrandsList = styled.div`
   gap: 18px;
   grid-area: brandsList;
   margin-top: 3rem;
-  @media only screen and (min-width: 640px) {
+  @media only screen and (min-width: 888px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem 3rem;
   }
@@ -342,7 +341,7 @@ const BrandArrow = styled.div`
 `;
 
 const StyledDescirption = styled.div`
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: 888px) {
     ${({ variation }) => (variation === 1 ? `max-width: 30ch;` : null)}
     ${({ variation }) => (variation === 2 ? `max-width: 30ch;` : null)}
     ${({ variation }) => (variation === 3 ? `max-width: 30ch;` : null)}
