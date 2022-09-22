@@ -54,17 +54,11 @@ const ModalBrand = ({ setIsOpen, item, nextItem, previouseItem }) => {
         )}
 
         <StyledTitle>
-          {/* <Image
-            src={item.data.logo.url}
-            alt={item.data.logo.alt}
-            layout='responsive'
-            width={item.data.image.dimensions.width}
-            height={item.data.image.dimensions.height}
-            quality={100}
-          /> */}
           <PrismicRichText field={item.data.name} />
         </StyledTitle>
-        <StyledDescription field={item.data.description} />
+        <StyledDescriptionWrapper>
+          <StyledDescription field={item.data.description} />
+        </StyledDescriptionWrapper>
 
         {prismicH.isFilled.group(item.data.partners) &&
         item.data.partners[0].logo.dimensions ? (
@@ -189,6 +183,14 @@ const StyledTitle = styled.div`
     font-weight: bold;
   }
   grid-area: title;
+`;
+
+const StyledDescriptionWrapper = styled.div`
+  grid-area: description;
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow-y: scroll;
+  height: 400px;
 `;
 const StyledDescription = styled(PrismicRichText)`
   grid-area: description;
