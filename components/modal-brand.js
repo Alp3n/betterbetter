@@ -189,7 +189,7 @@ const StyledDescriptionWrapper = styled.div`
   grid-area: description;
   display: grid;
   grid-template-columns: 1fr;
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 400px;
 `;
 const StyledDescription = styled(PrismicRichText)`
