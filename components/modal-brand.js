@@ -11,7 +11,7 @@ import { Autoplay } from 'swiper';
 const ModalBrand = ({ setIsOpen, item, nextItem, previouseItem, context }) => {
   if (!item) return null;
   const contextData = context;
-  console.log(context.data.description);
+
   return (
     <ModalWrapper
       item={item}
