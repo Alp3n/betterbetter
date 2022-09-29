@@ -190,7 +190,7 @@ const StyledDescriptionWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   overflow-y: auto;
-  height: 400px;
+  height: 260px;
 `;
 const StyledDescription = styled(PrismicRichText)`
   grid-area: description;
@@ -199,13 +199,13 @@ const StyledImage = styled.div`
   position: relative;
   /* background-color: grey; */
   grid-area: image;
-
+  height: 200px;
   > span {
     object-fit: contain;
   }
 
   @media only screen and (min-width: 1102px) {
-    height: 100%;
+    /* height: 300px; */
   }
 `;
 const StyledContacts = styled.div`
@@ -285,7 +285,8 @@ const StyledGallery = styled(Swiper)`
   /* max-height: 300px; */
   /* height: 100%; */
   width: 100%;
-  /* object-fit: ; */
+  /* max-height: 400px; */
+  /* object-fit: contain; */
 `;
 
 const StyledPartnerImage = styled(Image)`
