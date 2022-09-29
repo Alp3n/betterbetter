@@ -36,7 +36,7 @@ const ImagesSide = styled.div`
   grid-template-areas:
     'small high'
     '. high';
-  grid-area: images;
+  grid-area: gallery;
   /* overflow-x: scroll; */
   margin: 1rem 0 50px 0;
 

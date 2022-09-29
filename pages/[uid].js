@@ -10,7 +10,7 @@ import SEO from '../components/SEO';
 
 const Page = ({ page, menu }) => {
   const heroImage = `${page.data.imageMain.url}?dpr=2`;
-  console.log(page);
+  console.log(page.data.slices);
   return (
     <Layout menu={menu}>
       <SEO
@@ -19,19 +19,46 @@ const Page = ({ page, menu }) => {
       />
       {page.uid === 'wydarzenia' ? null : (
         <StyledBounded>
-          <StyledImage>
-            <Image src={heroImage} alt='' layout='fill' quality={100} />
-          </StyledImage>
+          <StyledImagesWrapper>
+            <StyledImage>
+              <Image
+                src={heroImage}
+                alt=''
+                layout='fill'
+                quality={100}
+                priority
+              />
+            </StyledImage>
+            <MobileWrapper>
+              {page?.data?.slices?.find(
+                (slice) => slice.slice_type === 'galeria_zdjec'
+              ) ? (
+                <SliceZone
+                  slices={[
+                    page?.data?.slices?.find(
+                      (slice) => slice.slice_type === 'galeria_zdjec'
+                    ),
+                  ]}
+                  components={components}
+                />
+              ) : null}
+            </MobileWrapper>
+          </StyledImagesWrapper>
+
           <StyledTexts>
             <StyledTitle field={page.data.title} />
-            <StyledDescirption field={page.data.description} />
+            <StyledDescription field={page.data.description} />
+            <SliceZone
+              slices={[
+                page?.data?.slices?.find(
+                  (slice) => slice.slice_type === 'sekcja_tekst'
+                ),
+              ]}
+              components={components}
+            />
           </StyledTexts>
         </StyledBounded>
       )}
-
-      <StyledDynamicBounded>
-        <SliceZone slices={page.data.slices} components={components} />
-      </StyledDynamicBounded>
     </Layout>
   );
 };
@@ -68,7 +95,7 @@ const StyledBounded = styled(Bounded)`
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
-      'image'
+      'images'
       'texts';
 
     margin-top: 0;
@@ -82,7 +109,7 @@ const StyledBounded = styled(Bounded)`
   @media only screen and (min-width: 640px) {
     > div {
       grid-template-columns: 1fr 1fr;
-      grid-template-areas: 'image texts';
+      grid-template-areas: 'images texts';
       gap: 4rem;
       margin-top: 4rem;
     }
@@ -109,7 +136,13 @@ const StyledDynamicBounded = styled(Bounded)`
     }
   }
 `;
-
+const StyledImagesWrapper = styled.div`
+  grid-area: images;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'image'
+    'gallery';
+`;
 const StyledImage = styled.div`
   position: relative;
   width: 100%;
@@ -139,9 +172,10 @@ const StyledTexts = styled.div`
   grid-template-columns: 1fr;
   grid-template-areas:
     'title'
-    'description';
+    'description'
+    'texts';
   grid-area: texts;
-  place-content: center;
+  place-content: start;
   gap: 2rem;
 
   @media only screen and (max-width: 640px) {
@@ -155,7 +189,7 @@ const StyledTexts = styled.div`
     }
   }
   @media only screen and (min-width: 1102px) {
-    gap: 4rem;
+    margin-top: 250px;
     p {
       font-weight: 400;
       /* font-size: 28px; */
@@ -170,6 +204,13 @@ const StyledTitle = styled(PrismicRichText)`
   font-family: 'Gotham Black';
 `;
 
-const StyledDescirption = styled(PrismicRichText)`
+const StyledDescription = styled(PrismicRichText)`
   grid-area: descritpion;
+`;
+
+const MobileWrapper = styled.div`
+  display: none;
+  @media only screen and (min-width: 1102px) {
+    display: block;
+  }
 `;

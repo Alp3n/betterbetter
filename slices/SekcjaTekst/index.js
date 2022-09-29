@@ -25,7 +25,7 @@ const StyledWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   place-content: start;
-  gap: 60px;
+  gap: 2rem;
   /* margin-bottom: 50px; */
   grid-area: texts;
   h3 {

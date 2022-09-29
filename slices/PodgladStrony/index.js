@@ -100,6 +100,7 @@ const PodgladStrony = ({ slice, context }) => {
             item={selectedItem}
             nextItem={nextItem}
             previouseItem={previouseItem}
+            context={context}
           />
         </ModalPortal>
       ) : null}

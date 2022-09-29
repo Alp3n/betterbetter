@@ -6,11 +6,12 @@ import Image from './image';
 import ModalWrapper from './modal-wrapper';
 import Youtube from '../public/static/svg/youtube.svg';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Zoom } from 'swiper';
+import { Autoplay } from 'swiper';
 
-const ModalBrand = ({ setIsOpen, item, nextItem, previouseItem }) => {
+const ModalBrand = ({ setIsOpen, item, nextItem, previouseItem, context }) => {
   if (!item) return null;
-
+  const contextData = context;
+  console.log(context.data.description);
   return (
     <ModalWrapper
       item={item}
@@ -30,14 +31,16 @@ const ModalBrand = ({ setIsOpen, item, nextItem, previouseItem }) => {
           >
             {item.data.photoGallery.map((item, i) => (
               <SwiperSlide key={i}>
-                <Image
-                  src={item.photo.url}
-                  alt={item.photo.alt}
-                  layout='responsive'
-                  width={item.photo.dimensions.width}
-                  height={item.photo.dimensions.height}
-                  quality={100}
-                />
+                <StyledImage>
+                  <Image
+                    src={item.photo.url}
+                    alt={item.photo.alt}
+                    layout='intrinsic'
+                    width={item.photo.dimensions.width}
+                    height={item.photo.dimensions.width}
+                    quality={100}
+                  />
+                </StyledImage>
               </SwiperSlide>
             ))}
           </StyledGallery>
@@ -57,6 +60,7 @@ const ModalBrand = ({ setIsOpen, item, nextItem, previouseItem }) => {
           <PrismicRichText field={item.data.name} />
         </StyledTitle>
         <StyledDescriptionWrapper>
+          <StyledDescription field={contextData} />
           <StyledDescription field={item.data.description} />
         </StyledDescriptionWrapper>
 
@@ -195,19 +199,7 @@ const StyledDescriptionWrapper = styled.div`
 const StyledDescription = styled(PrismicRichText)`
   grid-area: description;
 `;
-const StyledImage = styled.div`
-  position: relative;
-  /* background-color: grey; */
-  grid-area: image;
-  height: 200px;
-  > span {
-    object-fit: contain;
-  }
 
-  @media only screen and (min-width: 1102px) {
-    /* height: 300px; */
-  }
-`;
 const StyledContacts = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, auto);
@@ -281,14 +273,22 @@ const StyledPartner = styled(PrismicLink)`
 
 const StyledGallery = styled(Swiper)`
   grid-area: image;
-  /* max-height: 300px; */
-  /* max-height: 300px; */
-  /* height: 100%; */
   width: 100%;
-  /* max-height: 400px; */
-  /* object-fit: contain; */
 `;
+const StyledImage = styled.div`
+  position: relative;
+  background-color: #f0f0f0;
+  grid-area: image;
+  max-height: 420px;
 
+  span > {
+    object-fit: contain;
+  }
+
+  @media only screen and (min-width: 1102px) {
+    /* height: 300px; */
+  }
+`;
 const StyledPartnerImage = styled(Image)`
   :hover {
     filter: invert(100%);
