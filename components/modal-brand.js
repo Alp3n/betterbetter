@@ -8,9 +8,8 @@ import Youtube from '../public/static/svg/youtube.svg';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper';
 
-const ModalBrand = ({ setIsOpen, item, nextItem, previouseItem, context }) => {
+const ModalBrand = ({ setIsOpen, item, nextItem, previouseItem }) => {
   if (!item) return null;
-  const contextData = context;
 
   return (
     <ModalWrapper
@@ -60,7 +59,6 @@ const ModalBrand = ({ setIsOpen, item, nextItem, previouseItem, context }) => {
           <PrismicRichText field={item.data.name} />
         </StyledTitle>
         <StyledDescriptionWrapper>
-          <StyledDescription field={contextData} />
           <StyledDescription field={item.data.description} />
         </StyledDescriptionWrapper>
 
@@ -193,8 +191,13 @@ const StyledDescriptionWrapper = styled.div`
   grid-area: description;
   display: grid;
   grid-template-columns: 1fr;
-  overflow-y: auto;
-  height: 260px;
+  /* overflow-y: none; */
+  /* height: 260px; */
+
+  @media only screen and (min-width: 640px) {
+    overflow-y: auto;
+    height: 260px;
+  }
 `;
 const StyledDescription = styled(PrismicRichText)`
   grid-area: description;
