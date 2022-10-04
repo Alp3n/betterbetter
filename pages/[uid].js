@@ -17,7 +17,18 @@ const Page = ({ page, menu }) => {
         metaDescription={page.data.metaDescription}
         metaTitle={page.data.metaTitle}
       />
-      {page.uid === 'wydarzenia' ? null : (
+      {page.uid === 'wydarzenia' ? (
+        <StyledBounded>
+          <SliceZone
+            slices={[
+              page?.data?.slices?.find(
+                (slice) => slice.slice_type === 'galeria_wydarzen'
+              ),
+            ]}
+            components={components}
+          />
+        </StyledBounded>
+      ) : (
         <StyledBounded>
           <StyledImagesWrapper>
             <StyledImage>

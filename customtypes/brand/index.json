@@ -106,6 +106,30 @@
           "select": null
         }
       },
+      "instagram": {
+        "type": "Link",
+        "config": {
+          "label": "Link do Instagram",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "facebook": {
+        "type": "Link",
+        "config": {
+          "label": "Link do Facebook",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "linkedin": {
+        "type": "Link",
+        "config": {
+          "label": "Link do LinkedIn",
+          "placeholder": "",
+          "select": null
+        }
+      },
       "partners": {
         "type": "Group",
         "config": {

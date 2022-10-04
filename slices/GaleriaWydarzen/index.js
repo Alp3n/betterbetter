@@ -16,52 +16,56 @@ const GaleriaWydarzen = ({ slice }) => {
 
   const sortItems = (a, b) =>
     createDateObject(b.eventDate) - createDateObject(a.eventDate);
-
+  console.log(slice);
   return (
     <StyledWrapper>
-      {slice?.items?.sort(sortItems).map((item, i) => (
-        <StyledItem key={i} field={item.eventLink} target='_blank'>
-          {prismicH.isFilled.image(item.eventImage) && (
-            <Image
-              src={prismicH.asImageSrc(item.eventImage, {
-                w: undefined,
-                h: undefined,
-              })}
-              width={1200}
-              height={600}
-              alt={item.eventImage.alt}
-              layout='responsive'
-              quality={100}
-            />
-          )}
-          {item?.eventName ? (
-            <PrismicRichText
-              field={item.eventName}
-              components={{
-                heading2: ({ children }) => (
-                  <StyledHeading>{children}</StyledHeading>
-                ),
-              }}
-            />
-          ) : (
-            <h2>Tu powinien być tytuł, sprawdź w CMS!</h2>
-          )}
-          {item?.eventDate && item?.eventTime ? (
-            <StyledDateAndTime>
-              <span>Godzina&nbsp;</span>
-              <PrismicRichText field={item.eventTime} />
-              <span>&nbsp;dnia {dateTransform(item.eventDate)}</span>
-            </StyledDateAndTime>
-          ) : (
-            <p>Tu powinna być czas i data, sprawdź w CMS!</p>
-          )}
-          {item?.eventDescription ? (
-            <PrismicRichText field={item.eventDescription} />
-          ) : (
-            <p>Tu powinien być opis, sprawdź w CMS!</p>
-          )}
-        </StyledItem>
-      ))}
+      {prismicH.isFilled.group(slice.items) ? (
+        slice.items.sort(sortItems).map((item, i) => (
+          <StyledItem key={i} field={item.eventLink} target='_blank'>
+            {prismicH.isFilled.image(item.eventImage) && (
+              <Image
+                src={prismicH.asImageSrc(item.eventImage, {
+                  w: undefined,
+                  h: undefined,
+                })}
+                width={1200}
+                height={600}
+                alt={item.eventImage.alt}
+                layout='responsive'
+                quality={100}
+              />
+            )}
+            {item?.eventName ? (
+              <PrismicRichText
+                field={item.eventName}
+                components={{
+                  heading2: ({ children }) => (
+                    <StyledHeading>{children}</StyledHeading>
+                  ),
+                }}
+              />
+            ) : (
+              <h2>Tu powinien być tytuł, sprawdź w CMS!</h2>
+            )}
+            {item?.eventDate && item?.eventTime ? (
+              <StyledDateAndTime>
+                <span>Godzina&nbsp;</span>
+                <PrismicRichText field={item.eventTime} />
+                <span>&nbsp;dnia {dateTransform(item.eventDate)}</span>
+              </StyledDateAndTime>
+            ) : (
+              <p>Tu powinna być czas i data, sprawdź w CMS!</p>
+            )}
+            {item?.eventDescription ? (
+              <PrismicRichText field={item.eventDescription} />
+            ) : (
+              <p>Tu powinien być opis, sprawdź w CMS!</p>
+            )}
+          </StyledItem>
+        ))
+      ) : (
+        <h1>Aktualnie nie mamy zaplanowanych wydarzeń</h1>
+      )}
     </StyledWrapper>
   );
 };

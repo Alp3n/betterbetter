@@ -1,12 +1,16 @@
-// import { useState } from 'react';
 import { PrismicLink, PrismicRichText } from '@prismicio/react';
 import * as prismicH from '@prismicio/helpers';
 import styled from '@emotion/styled';
 import Image from './image';
 import ModalWrapper from './modal-wrapper';
 import Youtube from '../public/static/svg/youtube.svg';
+import Instagram from '../public/static/svg/instagram.svg';
+import Linkedin from '../public/static/svg/linkedin.svg';
+import Facebook from '../public/static/svg/facebook.svg';
+import Globe from '../public/static/svg/globe.svg';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper';
+import IconButton from './icon-button';
 
 const ModalBrand = ({ setIsOpen, item, nextItem, previouseItem }) => {
   if (!item) return null;
@@ -96,29 +100,63 @@ const ModalBrand = ({ setIsOpen, item, nextItem, previouseItem }) => {
           </StyledContacts>
         ) : null}
         <StyledURLWrapper>
-          <StyledURL>
-            <StyledBlackBox />
-            <PrismicLink
-              field={item.data.url}
+          <StyledURL
+            field={item.data.url}
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='website'
+          >
+            <StyledBlackBox>
+              <Globe width='28' height='28' viewBox='0 0 242 244' />
+            </StyledBlackBox>
+          </StyledURL>
+
+          {prismicH.isFilled.link(item.data.youtube) && (
+            <StyledURL
+              field={item.data.youtube}
               target='_blank'
               rel='noopener noreferrer'
+              aria-label='youtube'
             >
-              Website
-            </PrismicLink>
-          </StyledURL>
-          {prismicH.isFilled.link(item.data.youtube) && (
-            <StyledURL>
               <StyledBlackBox>
-                <Youtube width='28' height='28' viewBox='0 0 244 244' />
+                <Youtube width='28' height='28' viewBox='0 0 242 244' />
               </StyledBlackBox>
-              <PrismicLink
-                field={item.data.youtube}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                {/* {item.data.url.url} */}
-                YouTube
-              </PrismicLink>
+            </StyledURL>
+          )}
+          {prismicH.isFilled.link(item.data.instagram) && (
+            <StyledURL
+              field={item.data.youtube}
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='instagram'
+            >
+              <StyledBlackBox>
+                <Instagram width='28' height='28' viewBox='0 0 242 244' />
+              </StyledBlackBox>
+            </StyledURL>
+          )}
+          {prismicH.isFilled.link(item.data.facebook) && (
+            <StyledURL
+              field={item.data.youtube}
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='facebook'
+            >
+              <StyledBlackBox>
+                <Facebook width='28' height='28' viewBox='0 0 242 244' />
+              </StyledBlackBox>
+            </StyledURL>
+          )}
+          {prismicH.isFilled.link(item.data.linkedin) && (
+            <StyledURL
+              field={item.data.youtube}
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='linkedin'
+            >
+              <StyledBlackBox>
+                <Linkedin width='28' height='28' viewBox='0 0 242 244' />
+              </StyledBlackBox>
             </StyledURL>
           )}
         </StyledURLWrapper>
@@ -250,14 +288,14 @@ const StyledContactInfo = styled.div`
 
 const StyledURLWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
+  grid-auto-flow: column;
   grid-area: url;
+  place-content: start;
+  gap: 1rem;
 `;
 
-const StyledURL = styled.div`
-  display: grid;
-  grid-template-columns: 30px 1fr;
+const StyledURL = styled(PrismicLink)`
+  /* display: grid; */
   align-items: center;
   gap: 1rem;
 `;
