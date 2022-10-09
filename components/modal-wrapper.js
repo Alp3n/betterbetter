@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Bounded from './bounded';
 
 const ModalWrapper = ({
   setIsOpen,
@@ -8,7 +7,8 @@ const ModalWrapper = ({
   nextItem,
   previouseItem,
   children,
-  currentItem,
+  firstItem,
+  lastItem,
 }) => {
   if (!item) return null;
   return (
@@ -29,7 +29,7 @@ const ModalWrapper = ({
         <ButtonsWrapper>
           <ArrowButton
             onClick={() => previouseItem()}
-            currentItem={currentItem}
+            disabled={firstItem}
             color={'black'}
           >
             <svg
@@ -42,7 +42,11 @@ const ModalWrapper = ({
               <path d='M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z' />
             </svg>
           </ArrowButton>
-          <ArrowButton onClick={() => nextItem()} currentItem={currentItem}>
+          <ArrowButton
+            onClick={() => nextItem()}
+            lastItem={lastItem}
+            disabled={lastItem}
+          >
             <svg
               width='24'
               height='24'
@@ -150,6 +154,11 @@ const ArrowButton = styled.button`
   svg {
     ${({ color }) => (color === 'black' ? 'fill: white;' : 'fill: black')};
   }
+
+  :disabled {
+    background: #b1b1b1;
+  }
+
   @media only screen and (min-width: 1102px) {
     width: 60px;
     height: 60px;
@@ -157,32 +166,14 @@ const ArrowButton = styled.button`
     :hover {
       cursor: pointer;
       background-color: #b1b1b1;
+
+      :disabled {
+        cursor: auto;
+      }
     }
   }
 `;
-// STARE
-// const ArrowButton = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   font-size: 2rem;
-//   font-weight: bold;
-//   width: 100%;
-//   height: 100%;
-//   ${({ color }) =>
-//     color === 'black'
-//       ? 'background-color: black; color: white;'
-//       : 'background-color: white; color: black;'};
-//   @media only screen and (min-width: 1102px) {
-//     width: 60px;
-//     padding: 8px;
 
-//     :hover {
-//       cursor: pointer;
-//       background-color: #b1b1b1;
-//     }
-//   }
-// `;
 const MobileCloseButton = styled.button`
   display: flex;
   justify-content: center;

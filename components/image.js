@@ -1,7 +1,11 @@
+import { PrismicNextImage } from '@prismicio/next';
 import NextImage from 'next/image';
 import { useEffect, useState } from 'react';
 
+// const Image = ({ src, ...props }) => {
 const Image = (props) => {
+  // return <PrismicNextImage field={src} props={props} />;
+
   const [loading, setLoading] = useState(props.loading);
 
   useEffect(() => {

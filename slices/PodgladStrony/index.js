@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PrismicRichText } from '@prismicio/react';
 import * as prismicH from '@prismicio/helpers';
 import styled from '@emotion/styled';
@@ -11,6 +11,8 @@ import ModalPortal from '../../components/modal-portal';
 const PodgladStrony = ({ slice, context }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [firstItem, setFirstItem] = useState(false);
+  const [lastItem, setLastItem] = useState(false);
 
   const openModal = (item) => {
     setSelectedItem(item);
@@ -19,17 +21,32 @@ const PodgladStrony = ({ slice, context }) => {
 
   const nextItem = () => {
     let currentItem = context.indexOf(selectedItem);
-    if (currentItem === context.length - 1) return;
-    setSelectedItem(context[currentItem + 1]);
+    if (currentItem === context.length - 1) {
+      setLastItem(true);
+    } else {
+      setFirstItem(false);
+      setSelectedItem(context[currentItem + 1]);
+    }
   };
 
   const previouseItem = () => {
     let currentItem = context.indexOf(selectedItem);
-    if (currentItem === 0) return;
-    setSelectedItem(context[currentItem - 1]);
+    if (currentItem === 0) {
+      setFirstItem(true);
+    } else {
+      setLastItem(false);
+      setSelectedItem(context[currentItem - 1]);
+    }
   };
 
   const sortItems = (a, b) => a.data.position - b.data.position;
+
+  useEffect(() => {
+    let currentItem = context.indexOf(selectedItem);
+    if (currentItem === 0) {
+      setFirstItem(true);
+    }
+  }, [context, selectedItem]);
 
   return (
     <>
@@ -101,6 +118,8 @@ const PodgladStrony = ({ slice, context }) => {
             nextItem={nextItem}
             previouseItem={previouseItem}
             context={context}
+            firstItem={firstItem}
+            lastItem={lastItem}
           />
         </ModalPortal>
       ) : null}

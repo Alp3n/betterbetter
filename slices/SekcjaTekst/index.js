@@ -4,8 +4,10 @@ import { PrismicRichText } from '@prismicio/react';
 import * as prismicH from '@prismicio/helpers';
 import * as prismicR from '@prismicio/richtext';
 
-const SekcjaTekst = ({ slice }) => (
-  <StyledWrapper>
+const SekcjaTekst = ({ slice, context }) => (
+  <StyledWrapper
+    priceList={context.title[0].text === 'co-working' ? true : false}
+  >
     {slice.items.map((item, i) => (
       <div key={i}>
         {prismicH.isFilled.richText(item.title) ? (
@@ -32,6 +34,6 @@ const StyledWrapper = styled.div`
     margin-bottom: 20px;
   }
   div:last-of-type {
-    margin-bottom: 100px;
+    ${({ priceList }) => (priceList ? null : `margin-bottom: 100px;`)}
   }
 `;

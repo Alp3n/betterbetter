@@ -53,9 +53,11 @@ h2 {
   z-index: 99;
 }
 
-/* .portal-opened {
-  overflow: hidden;
-} */
+.swiper-button-next,
+.swiper-button-prev {
+  color: black !important;
+}
+
 @media only screen and (min-width: 640px) {
   h1 {
     font-size: 45px;

@@ -1,16 +1,17 @@
 import React from 'react';
-import { PrismicRichText } from '@prismicio/react';
+import { PrismicNextImage } from '@prismicio/next';
 import * as prismicH from '@prismicio/helpers';
 import styled from '@emotion/styled';
 import Image from '../../components/image';
 
-const GaleriaZdjec = ({ slice }) => {
-  //TODO FIX SLIDING GALLERY
+const GaleriaZdjec = ({ slice, context }) => {
   return (
-    <ImagesSide>
+    <ImagesSide
+      priceList={context.title[0].text === 'co-working' ? true : false}
+    >
       {slice.items.map((item, i) => (
         <ImageWrapper gridArea={item.gridArea} key={i}>
-          <Image
+          {/* <Image
             src={prismicH.asImageSrc(item.image, {
               w: undefined,
               h: undefined,
@@ -18,7 +19,8 @@ const GaleriaZdjec = ({ slice }) => {
             alt=''
             layout='fill'
             quality={85}
-          />
+          /> */}
+          <PrismicNextImage field={item.image} quality={100} />
         </ImageWrapper>
       ))}
     </ImagesSide>
@@ -33,45 +35,41 @@ const ImagesSide = styled.div`
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 45vw);
   gap: 1rem 1rem;
-  grid-template-areas:
-    'small high'
-    '. high';
+  ${({ priceList }) =>
+    priceList
+      ? `
+      grid-template-columns: 1fr;
+      grid-template-rows: 60vh;
+        grid-template-areas: 'high'
+        'high';`
+      : `grid-template-areas: 'small .'
+    '. high'
+    '. high';`}
   grid-area: gallery;
-  /* overflow-x: scroll; */
+
   margin: 1rem 0 50px 0;
 
-  @media only screen and (min-width: 640px) {
+  @media only screen and (min-width: 640px) and (max-width: 1102px) {
     grid-template-columns: repeat(2, 300px);
-    grid-template-rows: repeat(2, 300px);
     grid-template-areas:
-      'small high'
-      '. high';
-    overflow-x: unset;
-    display: none;
+      'high high'
+      'high high';
   }
   @media only screen and (min-width: 1102px) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 300px);
-    grid-template-areas:
-      'small .'
-      '. high'
-      '. high';
+
+    ${({ priceList }) =>
+      priceList
+        ? `
+        // grid-template-rows: repeat(2, 00px);
+        grid-template-areas: 'high high'
+        'high high';`
+        : `grid-template-areas: 'small .'
+    '. high'
+    '. high';`}
     display: grid;
   }
-`;
-
-const SmallImage = styled.div`
-  position: relative;
-  grid-area: smallImage;
-  width: auto;
-  height: auto;
-`;
-
-const BigImage = styled.div`
-  position: relative;
-  grid-area: bigImage;
-  width: auto;
-  height: auto;
 `;
 
 const ImageWrapper = styled.div`

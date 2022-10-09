@@ -110,7 +110,8 @@
         "type": "Link",
         "config": {
           "label": "Link do Instagram",
-          "placeholder": "",
+          "placeholder": "Proszę dodać link do Instagrama lub zostawić puste...",
+          "allowTargetBlank": false,
           "select": null
         }
       },
@@ -118,7 +119,8 @@
         "type": "Link",
         "config": {
           "label": "Link do Facebook",
-          "placeholder": "",
+          "placeholder": "Proszę dodać link do Facebooka lub zostawić puste...",
+          "allowTargetBlank": false,
           "select": null
         }
       },
@@ -126,7 +128,8 @@
         "type": "Link",
         "config": {
           "label": "Link do LinkedIn",
-          "placeholder": "",
+          "placeholder": "Proszę dodać link do LinkedIn lub zostawić puste...",
+          "allowTargetBlank": false,
           "select": null
         }
       },

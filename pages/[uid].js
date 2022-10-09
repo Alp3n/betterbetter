@@ -10,7 +10,7 @@ import SEO from '../components/SEO';
 
 const Page = ({ page, menu }) => {
   const heroImage = `${page.data.imageMain.url}?dpr=2`;
-  console.log(page.data.slices);
+
   return (
     <Layout menu={menu}>
       <SEO
@@ -51,6 +51,7 @@ const Page = ({ page, menu }) => {
                     ),
                   ]}
                   components={components}
+                  context={page.data}
                 />
               ) : null}
             </MobileWrapper>
@@ -66,8 +67,24 @@ const Page = ({ page, menu }) => {
                 ),
               ]}
               components={components}
+              context={page.data}
             />
           </StyledTexts>
+          <DesktopWrapper>
+            {page?.data?.slices?.find(
+              (slice) => slice.slice_type === 'galeria_zdjec'
+            ) ? (
+              <SliceZone
+                slices={[
+                  page?.data?.slices?.find(
+                    (slice) => slice.slice_type === 'galeria_zdjec'
+                  ),
+                ]}
+                components={components}
+                context={page.data}
+              />
+            ) : null}
+          </DesktopWrapper>
         </StyledBounded>
       )}
     </Layout>
@@ -119,14 +136,17 @@ const StyledBounded = styled(Bounded)`
   }
   @media only screen and (min-width: 640px) {
     > div {
+      gap: 4rem;
+    }
+  }
+  @media only screen and (min-width: 1102px) {
+    gap: 6rem;
+    > div {
       grid-template-columns: 1fr 1fr;
       grid-template-areas: 'images texts';
       gap: 4rem;
       margin-top: 4rem;
     }
-  }
-  @media only screen and (min-width: 1102px) {
-    gap: 6rem;
   }
 `;
 
@@ -163,14 +183,10 @@ const StyledImage = styled.div`
     object-fit: cover;
   }
 
-  @media only screen and (max-width: 640px) {
-    height: 60vh;
-  }
+  /* @media only screen and (max-width: 640px) { */
+  height: 50vh;
+  /* } */
 
-  @media only screen and (min-width: 641px) {
-    /* width: 600px; */
-    height: 400px;
-  }
   @media only screen and (min-width: 1102px) {
     /* width: 600px; */
     height: 600px;
@@ -193,8 +209,10 @@ const StyledTexts = styled.div`
     margin: 0 5%;
   }
   @media only screen and (min-width: 640px) {
+    margin: 0 5%;
     p {
       font-weight: 400;
+
       /* font-size: 20px; */
       line-height: 2;
     }
@@ -223,5 +241,12 @@ const MobileWrapper = styled.div`
   display: none;
   @media only screen and (min-width: 1102px) {
     display: block;
+  }
+`;
+
+const DesktopWrapper = styled.div`
+  display: block;
+  @media only screen and (min-width: 1102px) {
+    display: none;
   }
 `;

@@ -16,7 +16,7 @@ const GaleriaWydarzen = ({ slice }) => {
 
   const sortItems = (a, b) =>
     createDateObject(b.eventDate) - createDateObject(a.eventDate);
-  console.log(slice);
+
   return (
     <StyledWrapper>
       {prismicH.isFilled.group(slice.items) ? (

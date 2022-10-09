@@ -1,14 +1,16 @@
 import React from 'react';
-import styled from '@emotion/styled';
-import Image from '../../components/image';
 import * as prismicH from '@prismicio/helpers';
 import { PrismicRichText } from '@prismicio/react';
+import { PrismicNextImage } from '@prismicio/next';
+import styled from '@emotion/styled';
+import Image from '../../components/image';
 import Bounded from '../../components/bounded';
 
 const PelnaSzerokosc = ({ slice }) => {
   const backgroundImage = slice.primary.image;
   return (
     <StyledSection>
+      {/* <PrismicNextImage field={backgroundImage} /> */}
       {prismicH.isFilled.image(backgroundImage) && (
         <StyledImage
           src={prismicH.asImageSrc(backgroundImage, {
