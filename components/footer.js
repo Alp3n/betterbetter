@@ -13,11 +13,18 @@ const Footer = ({ footer }) => {
         </StyledLogo>
       </StyledBlackBar>
       <StyledBounded>
-        {footer.footer.map((item, i) => (
-          <PrismicLink key={i} field={item.itemLink} target='_blank'>
-            <PrismicRichText field={item.item} />
+        <StyledInfo>
+          {footer.footer.map((item, i) => (
+            <PrismicLink key={i} field={item.itemLink} target='_blank'>
+              <PrismicRichText field={item.item} />
+            </PrismicLink>
+          ))}
+        </StyledInfo>
+        <div>
+          <PrismicLink field={footer.privacyLink}>
+            Polityka prywatności
           </PrismicLink>
-        ))}
+        </div>
       </StyledBounded>
       <StyledCredentials>
         <PrismicLink
@@ -65,7 +72,7 @@ const StyledBounded = styled(Bounded)`
   padding: 50px;
   background-color: #000;
   div {
-    display: grid;
+    /* display: grid; */
     place-content: center;
     place-items: center;
     gap: 1rem;
@@ -82,7 +89,10 @@ const StyledBounded = styled(Bounded)`
     }
   }
 `;
-
+const StyledInfo = styled.div`
+  display: grid;
+  margin-bottom: 2rem;
+`;
 const StyledCredentials = styled.div`
   display: flex;
   color: black;

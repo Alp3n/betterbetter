@@ -12,6 +12,8 @@ export function linkResolver(doc) {
       return `/`;
     case 'page':
       return `/${doc.uid}`;
+    case 'privacy':
+      return `/privacy`;
     default:
       return null;
   }

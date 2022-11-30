@@ -11,15 +11,6 @@ const GaleriaZdjec = ({ slice, context }) => {
     >
       {slice.items.map((item, i) => (
         <ImageWrapper gridArea={item.gridArea} key={i}>
-          {/* <Image
-            src={prismicH.asImageSrc(item.image, {
-              w: undefined,
-              h: undefined,
-            })}
-            alt=''
-            layout='fill'
-            quality={85}
-          /> */}
           <PrismicNextImage field={item.image} quality={100} />
         </ImageWrapper>
       ))}

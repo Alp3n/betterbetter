@@ -124,6 +124,14 @@
             }
           }
         }
+      },
+      "privacyLink": {
+        "type": "Link",
+        "config": {
+          "label": "Link do strony prywatności",
+          "placeholder": "",
+          "select": null
+        }
       }
     }
   }
