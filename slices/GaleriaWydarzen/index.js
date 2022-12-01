@@ -20,49 +20,97 @@ const GaleriaWydarzen = ({ slice }) => {
   return (
     <StyledWrapper>
       {prismicH.isFilled.group(slice.items) ? (
-        slice.items.sort(sortItems).map((item, i) => (
-          <StyledItem key={i} field={item.eventLink} target='_blank'>
-            {prismicH.isFilled.image(item.eventImage) && (
-              <Image
-                src={prismicH.asImageSrc(item.eventImage, {
-                  w: undefined,
-                  h: undefined,
-                })}
-                width={1200}
-                height={600}
-                alt={item.eventImage.alt}
-                layout='responsive'
-                quality={100}
-              />
-            )}
-            {item?.eventName ? (
-              <PrismicRichText
-                field={item.eventName}
-                components={{
-                  heading2: ({ children }) => (
-                    <StyledHeading>{children}</StyledHeading>
-                  ),
-                }}
-              />
-            ) : (
-              <h2>Tu powinien być tytuł, sprawdź w CMS!</h2>
-            )}
-            {item?.eventDate && item?.eventTime ? (
-              <StyledDateAndTime>
-                <span>Godzina&nbsp;</span>
-                <PrismicRichText field={item.eventTime} />
-                <span>&nbsp;dnia {dateTransform(item.eventDate)}</span>
-              </StyledDateAndTime>
-            ) : (
-              <p>Tu powinna być czas i data, sprawdź w CMS!</p>
-            )}
-            {item?.eventDescription ? (
-              <PrismicRichText field={item.eventDescription} />
-            ) : (
-              <p>Tu powinien być opis, sprawdź w CMS!</p>
-            )}
-          </StyledItem>
-        ))
+        slice.items.sort(sortItems).map((item, i) =>
+          prismicH.isFilled.link(item.eventLink) ? (
+            <StyledItemAsLink key={i} field={item.eventLink} target='_blank'>
+              {prismicH.isFilled.image(item.eventImage) && (
+                <Image
+                  src={prismicH.asImageSrc(item.eventImage, {
+                    w: undefined,
+                    h: undefined,
+                  })}
+                  // width={1200}
+                  // height={600}
+                  width={item.eventImage.dimensions.width}
+                  height={item.eventImage.dimensions.height}
+                  alt={item.eventImage.alt}
+                  layout='responsive'
+                  quality={100}
+                />
+              )}
+              {item?.eventName ? (
+                <PrismicRichText
+                  field={item.eventName}
+                  components={{
+                    heading2: ({ children }) => (
+                      <StyledHeading>{children}</StyledHeading>
+                    ),
+                  }}
+                />
+              ) : (
+                <h2>Tu powinien być tytuł, sprawdź w CMS!</h2>
+              )}
+              {item?.eventDate && item?.eventTime ? (
+                <StyledDateAndTime>
+                  <span>Godzina&nbsp;</span>
+                  <PrismicRichText field={item.eventTime} />
+                  <span>&nbsp;dnia {dateTransform(item.eventDate)}</span>
+                </StyledDateAndTime>
+              ) : (
+                <p>Tu powinna być czas i data, sprawdź w CMS!</p>
+              )}
+              {item?.eventDescription ? (
+                <PrismicRichText field={item.eventDescription} />
+              ) : (
+                <p>Tu powinien być opis, sprawdź w CMS!</p>
+              )}
+            </StyledItemAsLink>
+          ) : (
+            <StyledItem key={i}>
+              {prismicH.isFilled.image(item.eventImage) && (
+                <Image
+                  src={prismicH.asImageSrc(item.eventImage, {
+                    w: undefined,
+                    h: undefined,
+                  })}
+                  // width={1200}
+                  // height={600}
+                  width={item.eventImage.dimensions.width}
+                  height={item.eventImage.dimensions.height}
+                  alt={item.eventImage.alt}
+                  layout='responsive'
+                  quality={100}
+                />
+              )}
+              {item?.eventName ? (
+                <PrismicRichText
+                  field={item.eventName}
+                  components={{
+                    heading2: ({ children }) => (
+                      <StyledHeading>{children}</StyledHeading>
+                    ),
+                  }}
+                />
+              ) : (
+                <h2>Tu powinien być tytuł, sprawdź w CMS!</h2>
+              )}
+              {item?.eventDate && item?.eventTime ? (
+                <StyledDateAndTime>
+                  <span>Godzina&nbsp;</span>
+                  <PrismicRichText field={item.eventTime} />
+                  <span>&nbsp;dnia {dateTransform(item.eventDate)}</span>
+                </StyledDateAndTime>
+              ) : (
+                <p>Tu powinna być czas i data, sprawdź w CMS!</p>
+              )}
+              {item?.eventDescription ? (
+                <PrismicRichText field={item.eventDescription} />
+              ) : (
+                <p>Tu powinien być opis, sprawdź w CMS!</p>
+              )}
+            </StyledItem>
+          )
+        )
       ) : (
         <h1>Aktualnie nie mamy zaplanowanych wydarzeń</h1>
       )}
@@ -78,11 +126,27 @@ const StyledWrapper = styled.div`
   margin: 0 0 4rem 0;
   gap: 3rem;
   @media only screen and (min-width: 1102px) {
-    margin: 3rem 0 5rem 0;
+    margin: 0rem 0 5rem 0;
     grid-template-columns: repeat(2, 1fr);
   }
 `;
-const StyledItem = styled(PrismicLink)`
+const StyledItemAsLink = styled(PrismicLink)`
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: auto;
+  gap: 1.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid black;
+  transition: linear 100ms;
+  :hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  }
+`;
+
+const StyledItem = styled.div`
   display: grid;
   grid-template-columns: 1;
   grid-template-rows: auto;
