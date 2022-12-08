@@ -21,7 +21,11 @@ export default function App({ Component, pageProps }) {
     //  - This must be an exact match of your domain.
     //  - If you're using www. for your domain, make sure you include that here.
     Fathom.load('BJJPHVVK', {
-      includedDomains: ['betterbetter.pl', 'www.betterbetter.pl'],
+      includedDomains: [
+        'betterbetter.pl',
+        'www.betterbetter.pl',
+        'quiet-planet.betterbetter.pl',
+      ],
     });
 
     function onRouteChangeComplete() {
