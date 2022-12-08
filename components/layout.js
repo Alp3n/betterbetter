@@ -8,7 +8,6 @@ export default function Layout({ children, menu }) {
       <Header header={menu.data} />
       <main>{children}</main>
       <Footer footer={menu.data} />
-      <Consent privacyLink={menu.data.privacyLink} />
     </>
   );
 }

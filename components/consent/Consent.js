@@ -31,29 +31,6 @@ function Consent({ privacyLink }) {
 
   //TODO Export to Prismic CMS
   return (
-    // <Transition appear show={consent ? false : true} as={Fragment}>
-    //   <Dialog as='div' onClose={() => {}}>
-    //      <Transition.Child
-    //       as={Fragment}
-    //       enter='ease-out duration-300'
-    //       enterFrom='opacity-0'
-    //       enterTo='opacity-100'
-    //       leave='ease-in duration-200'
-    //       leaveFrom='opacity-100'
-    //       leaveTo='opacity-0'
-    //     >
-    //       <StyledBackground />
-    //     </Transition.Child> 
-    //     <div>
-    //       <Transition.Child
-    //         as={Fragment}
-    //         enter='ease-out duration-300'
-    //         enterFrom='opacity-0 scale-95'
-    //         enterTo='opacity-100 scale-100'
-    //         leave='ease-in duration-200'
-    //         leaveFrom='opacity-100 scale-100'
-    //         leaveTo='opacity-0 scale-95'
-    //       > 
             <StyledDialogPanel>
               <StyledTitle as='p'>Cenimy Twoją prywatność</StyledTitle>
               <StyledText>
