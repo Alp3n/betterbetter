@@ -27,6 +27,7 @@ export default function App({ Component, pageProps }) {
         'www.betterbetter.pl',
         'quiet-planet.betterbetter.pl',
       ],
+      honorDNT: false,
     });
 
     function onRouteChangeComplete() {
