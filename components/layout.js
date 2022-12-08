@@ -1,6 +1,5 @@
 import Header from './header';
 import Footer from './footer';
-import Consent from './consent/Consent';
 
 export default function Layout({ children, menu }) {
   return (
