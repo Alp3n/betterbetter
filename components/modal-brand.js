@@ -141,7 +141,7 @@ const ModalBrand = ({
             )}
             {prismicH.isFilled.link(item.data.instagram) && (
               <StyledURL
-                field={item.data.youtube}
+                field={item.data.instagram}
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label='instagram'
@@ -153,7 +153,7 @@ const ModalBrand = ({
             )}
             {prismicH.isFilled.link(item.data.facebook) && (
               <StyledURL
-                field={item.data.youtube}
+                field={item.data.facebook}
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label='facebook'
@@ -165,7 +165,7 @@ const ModalBrand = ({
             )}
             {prismicH.isFilled.link(item.data.linkedin) && (
               <StyledURL
-                field={item.data.youtube}
+                field={item.data.linkedin}
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label='linkedin'
